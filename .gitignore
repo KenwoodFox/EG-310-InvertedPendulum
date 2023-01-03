@@ -19,8 +19,7 @@ _*/
 *.000
 *.bak
 *.bck
-*.kicad_pcb-bak
-*.kicad_sch-bak
+*.kicad_*-bak
 *-backups
 *.kicad_prl
 *.sch-bak
