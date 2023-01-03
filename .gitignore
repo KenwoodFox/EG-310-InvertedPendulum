@@ -1,0 +1,50 @@
+# Build artifacts
+version.h
+_build
+
+# Binaries
+*.FCStd1
+*.stl
+*.pdf
+*.zip
+*.*~
+
+# CAD Artifacts
+*.stl
+
+# Doc artifacts
+_*/
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups
+*.kicad_prl
+*.sch-bak
+*~
+_autosave-*
+*.tmp
+*-save.pro
+*-save.kicad_pcb
+fp-info-cache
+*auto_saved_files#
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+# Exported BOM files
+*.xml
+*.csv
+
+# Pio
+.pio
+
+# dev artifacts
+.vscode
