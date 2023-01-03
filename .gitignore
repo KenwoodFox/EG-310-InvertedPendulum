@@ -11,6 +11,7 @@ _build
 
 # CAD Artifacts
 *.stl
+*.blend1
 
 # Doc artifacts
 _*/
