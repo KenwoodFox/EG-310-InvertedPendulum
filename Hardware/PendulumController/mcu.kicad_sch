@@ -805,7 +805,6 @@
     )
   )
 
-
   (junction (at 130.81 32.385) (diameter 0) (color 0 0 0 0)
     (uuid 1f972c19-d1e0-48d3-a1b2-85c363f78b69)
   )
@@ -1482,7 +1481,7 @@
     (in_bom yes) (on_board yes)
     (uuid 315b65b6-c73a-4842-9b0d-fe7fa178eb60)
     (property "Reference" "J201" (id 0) (at 41.91 147.32 0))
-    (property "Value" "Tag Connect" (id 1) (at 41.275 162.56 0))
+    (property "Value" "ICSP" (id 1) (at 41.91 162.56 0))
     (property "Footprint" "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical" (id 2) (at 40.64 154.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1641,7 +1640,7 @@
     (property "Reference" "U201" (id 0) (at 50.165 42.545 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "ATmega328P-A" (id 1) (at 43.815 116.84 0)
+    (property "Value" "ATmega328P" (id 1) (at 43.815 116.84 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "Package_QFP:TQFP-32_7x7mm_P0.8mm" (id 2) (at 42.545 79.375 0)

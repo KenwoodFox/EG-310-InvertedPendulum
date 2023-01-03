@@ -51,8 +51,8 @@ outputs:
       ray_tracing: true
       rotate_x: -1
       rotate_y: 2
-      zoom: 5
-      wait_render: 20
+      zoom: 6
+      wait_render: 50
 
   # ======
   # PCBWay

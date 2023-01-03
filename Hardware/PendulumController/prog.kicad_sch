@@ -858,7 +858,6 @@
     )
   )
 
-
   (junction (at 153.67 128.905) (diameter 0) (color 0 0 0 0)
     (uuid 02146de3-4eea-4702-8cc3-f6580734a60c)
   )
@@ -1542,12 +1541,12 @@
   )
 
   (symbol (lib_id "power:+5V") (at 135.89 60.96 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (in_bom yes) (on_board yes)
     (uuid b1ef71c8-fbd1-4818-b4ac-a65d959f694d)
     (property "Reference" "#PWR0120" (id 0) (at 135.89 64.77 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Value" "+5V" (id 1) (at 135.89 55.88 0))
+    (property "Value" "+5V" (id 1) (at 135.89 57.15 0))
     (property "Footprint" "" (id 2) (at 135.89 60.96 0)
       (effects (font (size 1.27 1.27)) hide)
     )
