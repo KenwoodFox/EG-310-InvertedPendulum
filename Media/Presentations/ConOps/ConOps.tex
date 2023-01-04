@@ -1,0 +1,50 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+\usepackage{graphicx}
+\graphicspath{ {./Resources/} }
+
+% Title here
+\title{Sample Presentation}
+\author{Austin, Joe, Matt, Kathryn}
+\institute{SNHU/CETA}
+
+\begin{document}
+
+\frame{\titlepage} % Draw the title page
+
+% A frame
+\begin{frame}
+\frametitle{Sample frame 1}
+
+% Some columns
+\begin{columns}
+    \begin{column}{0.48\textwidth}
+        \begin{block}{Cute critter}
+            What is this thing?
+        \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+        \includegraphics[width=5cm]{what_is_this_thing}
+    \end{column}
+\end{columns}
+
+\end{frame}
+
+
+% A frame
+\begin{frame}
+\frametitle{Sample frame 2}
+
+\includegraphics[height=6cm]{pounce}
+
+\begin{block}{Fops}
+    He has failed.
+\end{block}
+
+\end{frame}
+
+\end{document}
