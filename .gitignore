@@ -48,3 +48,12 @@ fp-info-cache
 
 # dev artifacts
 .vscode
+
+# Docs
+*.gz
+*.aux
+*.log
+*.out
+*.snm
+*.toc
+*.nav
