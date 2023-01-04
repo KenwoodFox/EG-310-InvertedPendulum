@@ -7,8 +7,7 @@
 \usepackage{graphicx}
 \graphicspath{ {./Resources/} }
 
-% Title here
-\title{Sample Presentation}
+\title{ConOps - Inverted Pendulum PID Controller}
 \author{Austin, Joe, Matt, Kathryn}
 \institute{SNHU/CETA}
 
@@ -18,32 +17,97 @@
 
 % A frame
 \begin{frame}
-\frametitle{Sample frame 1}
+\frametitle{Stakeholders}
 
-% Some columns
-\begin{columns}
-    \begin{column}{0.48\textwidth}
-        \begin{block}{Cute critter}
-            What is this thing?
-        \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-        \includegraphics[width=5cm]{what_is_this_thing}
-    \end{column}
-\end{columns}
+\begin{block}{Stakeholders}
+    \begin{itemize}
+        \item Education (higher)
+        \item Education (lower)
+        \item Industrial training device
+    \end{itemize}
+\end{block}
+
+\begin{block}{Users}
+    \begin{itemize}
+        \item Professors
+        \item Teachers
+        \item Educators
+    \end{itemize}
+\end{block}
 
 \end{frame}
 
 
-% A frame
 \begin{frame}
-\frametitle{Sample frame 2}
+\frametitle{System Description}
 
-\includegraphics[height=6cm]{pounce}
+We want a conveyor assembly, sliding on linear rods
+using harmonic oscilations to bring the pendulum to a starting position, and then hold there
+using PID.
 
-\begin{block}{Fops}
-    He has failed.
+\begin{block}{}
+    The users will be able to modify the PID values on the fly to learn and experiment
+    with the concecept of PID loops.
 \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Enviornment}
+
+Our demonstrator will be in a:
+\begin{itemize}
+ \item High traffic enviroment
+ \item Possibly dusty
+ \item Indoors
+ \item Powered on 24/7
+\end{itemize}
+
+We'll need to think about
+
+\begin{itemize}
+ \item Wearing components (belts, sliders)
+ \item Constant touching and interaction
+ \item Low power/sleep mode
+ \item Heat Cucles
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Operating Modes}
+% Operating modes goes here
+
+\begin{itemize}
+ \item Demo mode (balances and shows off every so often)
+ \item Interact mode (user controls the PID, start and stop manually)
+ \item Low power/sleep mode (System reduces power consumption when not in use)
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Risks}
+
+Some risks
+
+\begin{itemize}
+ \item Pinch Points and swinging pendulums
+ \item [-] Capacative e-stop technology as well as sound alerts when the system begins to move
+ \item Failure in situ
+ \item [-] Easily servicable parts
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Impact considerations}
+
+Impact considerations
 
 \end{frame}
 
