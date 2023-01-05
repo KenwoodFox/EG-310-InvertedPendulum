@@ -50,5 +50,3 @@ Look to...
 
 Start by cloning this repo down and making a new branch, offical team communication
 is through discord so hop on over any time! If you're new to git check out this video: https://youtu.be/mJ-qvsxPHpY
-
-Hi Joe
