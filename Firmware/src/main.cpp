@@ -4,11 +4,18 @@
  * @brief Source code for EG-310 Pendulum demonstrator
  */
 
+//  This option forces Encoder.h to use actual assembly code to squeeze extra performance from the system
+#define ENCODER_OPTIMIZE_INTERRUPTS
+
 // Libs
 #include <Arduino.h>
+#include <Encoder.h>
 
 // Headers
 #include "boardPins.h"
+
+// Instantiate objects
+Encoder pendulumEncoder(ENC_A, ENC_B);
 
 void setup()
 {
@@ -26,8 +33,6 @@ void setup()
     pinMode(TFT_CS, OUTPUT);
     pinMode(TFT_A0, OUTPUT);
 
-    pinMode(ENC_A, INPUT);
-    pinMode(ENC_B, INPUT);
     pinMode(PPIN, INPUT);
     pinMode(IPIN, INPUT);
     pinMode(DPIN, INPUT);
