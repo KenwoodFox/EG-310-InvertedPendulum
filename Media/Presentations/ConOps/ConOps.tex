@@ -25,6 +25,7 @@
             \item Education (higher)
             \item Education (lower)
             \item Industrial training device
+            \item Educational Toy Industry
         \end{itemize}
     \end{block}
 
@@ -33,6 +34,7 @@
             \item Professors
             \item Teachers
             \item Educators
+            \item On-Boarding / Hiring of Software Engineers
         \end{itemize}
     \end{block}
 
@@ -42,13 +44,13 @@
 \begin{frame}
     \frametitle{System Description}
 
-    We want a conveyor assembly, sliding on linear rods
+    We want a conveyor assembly controlled by a NEMA-17 motor, sliding on circular linear rods
     using harmonic osculations to bring the pendulum to a starting position, and then hold there
-    using PID.
+    using an embedded PID. The system will have three potentiometers, a TFT-screen, and a button on the user control panel. All encased in a transparent housing.
 
     \begin{block}{}
-        The users will be able to modify the PID values on the fly to learn and experiment
-        with the concept of PID loops.
+        The users will be able to modify the PID values on the fly using the potentiometers to learn and experiment
+        with the concept of PID loops after the press of a button on the front of the user control panel.
     \end{block}
 
 \end{frame}
@@ -83,11 +85,16 @@
     \begin{block}{COTS Parts}
         Our demonstrator will be made from as many COTS (Common Off The Shelf) parts
         as possible to ensure simple replacement.
+        Some of the wearing will be the belt, the linear bearing, the fans may need replacement, power cord, the bearings may need to be lubed occasionally, and Loctite will need to be applied to screws to prevent them from backing out due to vibrations from the motor. 
     \end{block}
 
     \begin{block}{Modularity}
         Our demonstrator will be made from modular sections and de-constructable segments
         to facilitate service and storage.
+    \end{block}
+    
+    \begin{block}{Calibration}
+        The pendulum will be self calibrating using gravity.
     \end{block}
 
 \end{frame}
@@ -98,9 +105,11 @@
     % Operating modes goes here
 
     \begin{itemize}
-        \item Demo mode (balances and shows off every so often)
-        \item Interact mode (user controls the PID, start and stop manually)
-        \item Low power/sleep mode (System reduces power consumption when not in use)
+        \item Off mode: the state in which the system is powered down and or unplugged.
+        \item Idle mode: a power saving mode in which fans are turned off; the TFT screen is turned off; and the motor controller, CPU, and power supply will be swapped to their internal lower power consumption mode. 
+        \item Spin-up mode: a custom control procedure that self initializes (swing the pendulum up into a ready state using harmonic oscillation.
+        \item Demo PID mode: a build-in PID procedure with lock Kp, Ki, and Kd values to demonstrate how the inverse pendulum is properly balanced. 
+        \item User PID mode: a control structure in which the user can manipulate the Kp, Ki, and Kd constants to witness the effects of their changes on the stability of the pendulum. 
     \end{itemize}
 
 \end{frame}
@@ -108,7 +117,8 @@
 
 \begin{frame}
     \frametitle{Use}
-
+    The system will be serviceable and long-lasting. The system should be reliable and precise, and be able to operate often long periods of non-usage.
+    \vspace{.5cm}
     We hope that our demonstrator may find semi-permanent use educating students and future
     engineers here and in market!
 
@@ -121,14 +131,45 @@
     Some risks
 
     \begin{itemize}
-        \item Pinch Points and swinging pendulums
-        \item [-] Capacitive e-stop technology as well as sound alerts when the system begins to move
-        \item Failure in situ
-        \item [-] Easily serviceable parts
+        \item Pinch Points and swinging pendulum.
+        \item [-] Capacitive e-stop technology as well as sound alerts when the system begins to move, and a transparent shield / cover to isolate the dynamic system.
+        \item Failure in on duty.
+        \item [-] Easily serviceable parts.
+        \item Prevention of self destruction due to inexperienced or unknowing user.
+        \item [-] Software locks, an e-stop switch, and a rubber bumper / mechanical hard stop.
+        \item Electrical short
+        \item [-] Have a fused power supply, and will follow IEC standards with proper grounding.
+        \item Electrical heat
+        \item [-] Embedded fans in the storage with plenty of holes for ventilation. 
     \end{itemize}
 
 \end{frame}
 
+\begin{frame}
+    \frametitle{Impact Considerations}
+    
+    \begin{block}{Social Impacts}
+        \begin{itemize}
+        \item PID will become a more widely understood control system, and students will be able to more efficiently tune their PID loops.
+        \item The ease of education into control systems using the product may sway more interest more of he younger generation into the engineering fields.
+        \item Higher education could give the system without the embedded PID loop and create a project in which students must start form scratch to balance the pendulum.
+     
+        \end{itemize}
+    \end{block}
+    
+    \begin{block}{Environmental Impacts}
+        \begin{itemize}
+        \item Create a larger current draw on the environment.
+        \item Portions of the electronics have rare-earth metals that the Earth has a limited supply of.
+        \item The system takes up physical space wherever it is installed, and as new iterations are created, the system may be thrown out. 
+        \end{itemize}
+    \end{block}
+
+    
+
+    
+
+\end{frame}
 
 \begin{frame}
     \frametitle{Initial Renders (1/2)}
