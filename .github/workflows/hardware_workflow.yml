@@ -9,6 +9,7 @@ on:
   pull_request:
     paths:
       - "Hardware/**"
+      - "Docs/**"
 
 jobs:
   KiCad_Hardware:
@@ -76,7 +77,9 @@ jobs:
           path: _hardwareOutput
 
       # Convert svg graphics
-      - run: convert -density 300 _hardwareOutput/LC-Mainboard-schematic.svg _hardwareOutput/LC-Mainboard-schematic.png
+      - run: convert -density 300 _hardwareOutput/PendulumController-schematic.svg _hardwareOutput/PendulumController-schematic.png
+
+      - run: tree # just for testing
 
       - run: cd Docs && make latexpdf
 
