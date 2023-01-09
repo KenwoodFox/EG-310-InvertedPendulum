@@ -63,12 +63,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: texlive-latex-recommended texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
-          version: 1.0
-
-      - run: sudo texconfig rehash # Needed because of caching
+      # Do not cache
+      - run: sudo apt install texlive-latex-recommended texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
 
       - name: Install requirements
         run: pip install -r Docs/requirements.txt
