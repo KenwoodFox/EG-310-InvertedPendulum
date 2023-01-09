@@ -10,5 +10,5 @@ Schematics
 Schematics for the Pendulum328
 
 .. image:: ../../_hardwareOutput/PendulumController-schematic.png
-  :width: 80%
+  :width: 100%
   :alt: Board Schematics
