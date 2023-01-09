@@ -2,9 +2,9 @@ import git
 
 # Project Information
 
-project = "Climate Monitoring System"
-copyright = "2021-2022, To Be Announced"
-author = "Team Gold, SNHU/CETA"
+project = "Pendulum328 Manual"
+copyright = "2022-2023"
+author = "AKMJ, SNHU/CETA"
 
 
 # The full version, including alpha/beta/rc tags
