@@ -67,7 +67,8 @@ jobs:
         with:
           packages: texlive-latex-recommended texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
           version: 1.0
-          execute_install_scripts: true
+
+      - run: sudo texconfig rehash # Needed because of caching
 
       - name: Install requirements
         run: pip install -r Docs/requirements.txt
