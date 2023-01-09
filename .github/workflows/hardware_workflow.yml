@@ -75,6 +75,9 @@ jobs:
           name: Board-Hardware
           path: _hardwareOutput
 
+      # Convert svg graphics
+      - run: convert -density 300 _hardwareOutput/PendulumController-schematic.svg _hardwareOutput/PendulumController-schematic.png
+
       - run: cd Docs && make latexpdf
 
       - run: mv Docs/_build/latex/*.pdf Docs/_build/latex/Board-Manual.pdf

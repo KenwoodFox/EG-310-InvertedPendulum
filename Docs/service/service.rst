@@ -9,6 +9,6 @@ Schematics
 
 Schematics for the Pendulum328
 
-.. image:: ../../_hardwareOutput/PendulumController-schematic.svg
+.. image:: ../../_hardwareOutput/PendulumController-schematic.png
   :width: 100%
   :alt: Board Schematics
