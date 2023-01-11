@@ -7810,7 +7810,7 @@
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/b3eb6867-6f92-42c4-81ac-e198957c6dcb"
       (reference "#PWR0126") (unit 1) (value "GND") (footprint "")
     )
-    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/79225e35-cb2c-40d6-9332-0d1cf60f8225"
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/141283da-78cb-47f4-9a17-aff64ac1c31f"
       (reference "#PWR0127") (unit 1) (value "GND") (footprint "")
     )
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/353f96e2-6d08-4f7a-9e74-70d2d0a517ef"
@@ -7860,6 +7860,12 @@
     )
     (path "/e34bbb1d-8fc5-4d45-b53a-95ad83f410aa"
       (reference "#PWR0143") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/f952923d-b4c1-43aa-bb2b-f6f6c554fb18"
+      (reference "#PWR0144") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/7dc5268c-ae8d-4b14-ab23-b5a222371f4c"
+      (reference "#PWR0145") (unit 1) (value "GND") (footprint "")
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/cbe3a40e-05d6-4b4c-bc71-d9a218a4165e"
       (reference "#PWR0201") (unit 1) (value "GND") (footprint "")
@@ -7993,8 +7999,8 @@
     (path "/ddccc170-e5f2-4630-b82e-7e46ab8f3eab/1a053b9d-361f-4562-aaf8-f4d6bf937fd0"
       (reference "J302") (unit 1) (value "19V Input") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal")
     )
-    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/faa6671c-cb96-47bc-9599-36d7da95dabe"
-      (reference "J401") (unit 1) (value "USB_B_Micro") (footprint "Connector_USB:USB_Mini-B_Lumberg_2486_01_Horizontal")
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/8086094b-968c-4101-b61b-2de95ef1c27e"
+      (reference "J401") (unit 1) (value "USBC") (footprint "Connector_USB:USB_C_Receptacle_XKB_U262-16XN-4BVC11")
     )
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/374910e4-27c7-4c08-a9c3-21c995b38e3b"
       (reference "J402") (unit 1) (value "PROG") (footprint "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical")
@@ -8055,6 +8061,12 @@
     )
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/77483018-7429-4c37-94c3-d0e229ab4453"
       (reference "R404") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0805_2012Metric")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/24867656-9b6e-4b5c-b797-7c6a1ffcf5b8"
+      (reference "R405") (unit 1) (value "5K1") (footprint "Resistor_SMD:R_0805_2012Metric")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/27550787-fe76-4b4c-b971-8872d078979d"
+      (reference "R406") (unit 1) (value "5K1") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/06038177-2e74-4149-8ecc-090a0cb31be6"
       (reference "RV201") (unit 1) (value "P_Pot") (footprint "Connector_JST:JST_EH_B3B-EH-A_1x03_P2.50mm_Vertical")
