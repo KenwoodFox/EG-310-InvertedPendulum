@@ -6625,6 +6625,7 @@
     )
   )
 
+
   (junction (at 260.985 36.195) (diameter 0) (color 0 0 0 0)
     (uuid 08ca86e7-2f81-468b-9172-7c7907832173)
   )
@@ -7731,6 +7732,12 @@
   (symbol_instances
     (path "/ddccc170-e5f2-4630-b82e-7e46ab8f3eab/a2939e51-d064-403e-b800-f04441a7e994"
       (reference "#FLG0101") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/f1fb7a45-6843-42f4-b76d-1c8e9a7eccfb"
+      (reference "#FLG0102") (unit 1) (value "PWR_FLAG") (footprint "")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/d6f00122-4722-4975-ac7f-1a24f606ee99"
+      (reference "#FLG0103") (unit 1) (value "PWR_FLAG") (footprint "")
     )
     (path "/2ecf2374-9c1c-4e92-a809-f5005df04ae1"
       (reference "#PWR0101") (unit 1) (value "+19V") (footprint "")
