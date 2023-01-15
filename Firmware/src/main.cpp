@@ -10,7 +10,8 @@
 // Libs
 #include <Arduino.h>
 // #include <Encoder.h>
-#include <TFT.h>
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 #include <SPI.h>
 
 // Headers
@@ -18,7 +19,9 @@
 
 // Instantiate objects
 // Encoder pendulumEncoder(ENC_A, ENC_B);
-TFT disp = TFT(TFT_CS, TFT_A0, TFT_RESET);
+Adafruit_ST7735 disp = Adafruit_ST7735(TFT_CS, TFT_A0, TFT_RESET);
+
+float p = 3.1415926; // Delete me later
 
 void setup()
 {
@@ -27,31 +30,25 @@ void setup()
     Serial.begin(115200);
     Serial.println(MOTD);
 
-    // // Configure Pins
-    // pinMode(STAT_LED, OUTPUT);
-    // pinMode(ENABLE, OUTPUT);
-    // pinMode(STEP, OUTPUT);
-    // pinMode(DIR, OUTPUT);
-    // pinMode(TFT_RESET, OUTPUT);
-    // pinMode(TFT_CS, OUTPUT);
-    // pinMode(TFT_A0, OUTPUT);
+    // Init display
+    disp.initR(INITR_GREENTAB);
 
-    // pinMode(PPIN, INPUT);
-    // pinMode(IPIN, INPUT);
-    // pinMode(DPIN, INPUT);
-    // pinMode(STOP_MODE, INPUT);
-    // pinMode(START, INPUT);
+    // Fill with black
+    disp.fillScreen(ST77XX_BLACK);
+    delay(500);
 
-    // Configure TFT
-    disp.begin();
+    disp.setCursor(0, 0);
+    disp.setTextColor(ST7735_WHITE);
+    disp.setTextWrap(true);
+    disp.print("HelloWorld!");
+
+    disp.drawLine(0, 0, disp.width() - 1, disp.height() - 1, ST7735_YELLOW);
+    disp.drawLine(disp.width() - 1, 0, 0, disp.height() - 1, ST7735_YELLOW);
+
+    disp.drawPixel(0, disp.height() / 2, ST7735_GREEN);
 }
 
 void loop()
 {
-    disp.background(255, 0, 0);
-    Serial.println("Set bkground to red");
-    delay(500);
-    disp.background(0, 255, 0);
-    Serial.println("Set bkground to green");
     delay(500);
 }
