@@ -25,4 +25,23 @@ Task Status:
 
 # Out of class meeting January 16th
 
-TBD
+---
+Attended: Kat, Matt
+Start Time: 3:30 PM
+End Time: 5:00 PM
+---
+
+Goals for Today’s Meeting:
+ - Submit Conops and System Requirements
+ - Submit Technical Drawings
+ - Submit Project Schedule
+ - Begin Brainstorming PDP
+ - Submit Weekly Meeting Minutes and Status Report
+
+Nowhere to submit the technical drawing so we were unable to complete that task.
+
+Action Items (record responsibility for each on Tasks and Responsibilities Record)
+ - Joe converted Conops slideshow to a PDF file and submitted it
+ - Joe also finished the schedule and submitted it in PDF format
+ - Matt finished and submitted the Reports
+ - Matt and Kat brainstormed the drafting of the PDP.
