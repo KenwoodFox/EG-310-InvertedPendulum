@@ -1,4 +1,4 @@
-# In class meeting
+# In class meeting January 9
 
 Prof says we should have
  - Schedule
