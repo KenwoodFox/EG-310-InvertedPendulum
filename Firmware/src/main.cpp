@@ -50,5 +50,8 @@ void setup()
 
 void loop()
 {
-    delay(500);
+    disp.fillScreen(ST77XX_BLACK);
+    delay(1000);
+    disp.setTextColor(ST77XX_WHITE);
+    delay(1000);
 }
