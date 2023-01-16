@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{chronology}
+\usepackage{graphicx}
+\usepackage{listings}
+\graphicspath{../../Media}
+\usepackage{moreverb}
+
+
+ \providecommand{\keywords}[1]
+{
+  \small
+  \textbf{\textit{Keywords---}} #1
+}
+
+\title{Pendulum328\\[1ex] \large Weekly Status Report}
+\date{January 9 - 16}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\maketitle
+
+%TC:ignore
+\begin{center}
+    \includegraphics[height=7cm]{../../Media/AJMK_Logo.png}
+
+    \vspace{0.8cm}
+
+    Southern New Hampshire University\\
+    School of Engineering, Technology and Aeronautics
+\end{center}
+
+\pagebreak
+
+% Begin status report
+
+\section{Weekly Summary}
+
+This week we did..
+
+\section{Meeting Notes}
+% Include meeting notes verbatim
+\lstinputlisting[language=python,breaklines=true]{../Meeting Minutes/January 9 Minutes.md}
+
+\section{Github}
+
+\begin{lstlisting}[breaklines=true]
+Excluding merges, 2 authors have pushed 3 commits to main and 14 commits to all branches. On main, 27 files have changed and there have been 467 additions and 50 deletions.
+\end{lstlisting}
+
+
+\end{document}
