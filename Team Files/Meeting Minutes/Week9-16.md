@@ -31,7 +31,7 @@ Start Time: 3:30 PM
 End Time: 5:00 PM
 ---
 
-Goals for Today’s Meeting:
+Goals for Today's Meeting:
  - Submit Conops and System Requirements
  - Submit Technical Drawings
  - Submit Project Schedule
