@@ -33,7 +33,7 @@ A PID system is a general method for a computer or intelligent system to reduce 
 or deviation in a system. Examples include the thermostat in a stove, the cruise control in a
 car or the gain control on a phone microphone.
 
-Our system aims to help display the fundamentals of a PID system in the form of a machine dedicated
+This system aims to help display the fundamentals of a PID system in the form of a machine dedicated
 to allowing the operator to experiment with the tuning and functions behind the algorithm.
 
 It will be constructed from steel and wood, powered by a single motor and a small processor
@@ -44,184 +44,114 @@ balance an inverted pendulum and allow user input to control the rates and respo
 
 \section{Operational Environment}
 
-    Our demonstrator will be in a:
-    \begin{itemize}
-        \item High traffic environment
-        \item Possibly dusty
-        \item Indoors
-        \item Powered on 24/7
-    \end{itemize}
+This demonstrator will be in a:
 
-    We'll need to think about
+\begin{itemize}
+    \item High traffic environment
+    \item Possibly dusty
+    \item Indoors
+    \item Powered on 24/7
+\end{itemize}
 
-    \begin{itemize}
-        \item Wearing components (belts, sliders)
-        \item Constant touching and interaction
-        \item Low power/sleep mode
-        \item Heat Cycles
-    \end{itemize}
+The enviorment the unit is placed in will affect the Support Enviorment.
 
 
 \section{Support Environment}
 
-Our demonstrator will be made from as many COTS (Common Off The Shelf) parts
+This demonstrator will be made from as many COTS (Common Off The Shelf) parts
 as possible to ensure simple replacement.
-Some of the wearing will be the belt, the linear bearing, the fans may need replacement, power cord, the bearings may need to be lubed occasionally, and Loctite will need to be applied to screws to prevent them from backing out due to vibrations from the motor.
 
-Our demonstrator will be made from modular sections and de-constructable segments
-to facilitate service and storage.
+The enviorment the unit is in will affect many parts of this demonstrator
 
-The pendulum will be self calibrating using gravity.
+\begin{itemize}
+    \item Wearing components (belts, sliders)
+    \item[Mitigation] All wearable parts will be accesable and removable without major dissasembly.
+    \item Constant touching and interaction
+    \item[Mitigation] The demonstrator will be built from sturdy and easy to clean components.
+    \item Constant uptime
+    \item[Mitigation] Low power/sleep mode can prolong the life of electronics when not in use
+\end{itemize}
 
+Anything requiring major dissasembly, prolonged repair or specailaty parts will be built robust and
+within manufacturer spec with documentation alongside. All systems either self calibrating or
+not requiring calibration. The system will be designed with long life servicibility in mind.
 
 
 \section{Operating Modes}
-    % Operating modes goes here
+% Operating modes goes here
 
-    \begin{itemize}
-        \item Off mode: the state in which the system is powered down and or unplugged.
-        \item Idle mode: a power saving mode in which fans are turned off; the TFT screen is turned off; and the motor controller, CPU, and power supply will be swapped to their internal lower power consumption mode.
-        \item Spin-up mode: a custom control procedure that self initializes (swing the pendulum up into a ready state using harmonic oscillation.
-        \item Demo PID mode: a build-in PID procedure with lock Kp, Ki, and Kd values to demonstrate how the inverse pendulum is properly balanced.
-        \item User PID mode: a control structure in which the user can manipulate the Kp, Ki, and Kd constants to witness the effects of their changes on the stability of the pendulum.
-    \end{itemize}
+\begin{itemize}
+    \item Off mode: the state in which the system is powered down and or unplugged.
+    \item Idle mode: a power saving mode in which fans are turned off; the TFT screen is turned off; and the motor controller, CPU, and power supply will be swapped to their internal lower power consumption mode.
+    \item Spin-up mode: a custom control procedure that self initializes (swing the pendulum up into a ready state using harmonic oscillation.
+    \item Demo PID mode: a build-in PID procedure with lock Kp, Ki, and Kd values to demonstrate how the inverse pendulum is properly balanced.
+    \item User PID mode: a control structure in which the user can manipulate the Kp, Ki, and Kd constants to witness the effects of their changes on the stability of the pendulum.
+\end{itemize}
 
 
 \section{Use}
-    The system will be serviceable and long-lasting. The system should be reliable and precise, and be able to operate often long periods of non-usage.
-    \vspace{.5cm}
-    We hope that our demonstrator may find semi-permanent use educating students and future
-    engineers here and in market!
+
+This system will provide an excellend robust teaching tool for its users to grasp and deeply
+understand the function of a PID loop, witch is an essential software and hardware algorithm
+for many industries.
 
 
 \section{Risks}
 
-    Some risks
+This system introduces risks
 
-    \begin{itemize}
-        \item Pinch Points and swinging pendulum.
-        \item [-] Capacitive e-stop technology as well as sound alerts when the system begins to move, and a transparent shield / cover to isolate the dynamic system.
-        \item Failure in on duty.
-        \item [-] Easily serviceable parts.
-        \item Prevention of self destruction due to inexperienced or unknowing user.
-        \item [-] Software locks, an e-stop switch, and a rubber bumper / mechanical hard stop.
-        \item Electrical short
-        \item [-] Have a fused power supply, and will follow IEC standards with proper grounding.
-        \item Electrical heat
-        \item [-] Embedded fans in the storage with plenty of holes for ventilation.
-    \end{itemize}
+\begin{tabular}{ |p{1.5cm}||p{3cm}|p{7.5cm}|  }
+    \hline
+    Severity & Risk                                       & Mitigation           \\
+    \hline
+    10       & Pinch Points and swinging pendulum         & Capacitive e-stop
+    technology as well as sound alerts when the system begins to move, and a
+    transparent shield / cover to isolate the dynamic system.                    \\
+    \hline
+    5        & Failure in-situ                            & Easily serviceable
+    parts.
+    \\
+    \hline
+    2        & Damaged to the unit from normal use        & Software locks, an
+    e-stop switch, and a rubber bumper / mechanical hard stops.
+    \\
+    \hline
+    5        & Short circuits and electrical malfunctions & Have a fused power
+    supply, and will follow IEC standards with proper grounding.
+    \\
+    \hline
+    5        & Heat                                       & Embedded fans in the
+    storage with plenty of holes for ventilation.
+    \\
+    \hline
+\end{tabular}
 
 
 \section{Impact Considerations}
 
-\begin{itemize}
-    \item PID will become a more widely understood control system, and students will be able to more efficiently tune their PID loops.
-    \item The ease of education into control systems using the product may sway more interest more of he younger generation into the engineering fields.
-    \item Higher education could give the system without the embedded PID loop and create a project in which students must start form scratch to balance the pendulum.
-
-\end{itemize}
+There are some considerations to think about with the implementation of this
+sytem, such as
 
 \begin{itemize}
-    \item Create a larger current draw on the environment.
-    \item Portions of the electronics have rare-earth metals that the Earth has a limited supply of.
-    \item The system takes up physical space wherever it is installed, and as new iterations are created, the system may be thrown out.
+    \item Being a hazzard and risking misuse.
+    \item Requiring physical space, either for storage or use.
+    \item Producing a significant amount of polutant to construct, deploy, and
+          eventually recycle/throw away.
 \end{itemize}
 
 
+\pagebreak
+\section{Inital Renders}
+\includegraphics[height=7cm]{Full}
 
+\vspace{1cm}
 
+\includegraphics[width=5cm]{Scale}
 
-%
-% \end{frame}
-%
-% \begin{frame}
-%     \frametitle{Initial Renders (1/2)}
-%
-%     \begin{columns}                         % You can use a columnn (or row) to split the screen
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{Initial Sketch}
-%                 We hope that our final design may look something like this!
-%             \end{block}
-%         \end{column}
-%         \begin{column}{0.48\textwidth}
-%             \includegraphics[height=7cm]{Full}
-%         \end{column}
-%     \end{columns}
-%
-% \end{frame}
-%
-%
-% \begin{frame}
-%     \frametitle{Initial Renders (2/2)}
-%
-%     \begin{columns}
-%         \begin{column}{0.48\textwidth}
-%             \includegraphics[width=5cm]{Scale}
-%         \end{column}
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{Initial Sketch}
-%                 We'd like it to stand about this tall (left) to facilitate easy access
-%                 and usage. With a simple and minimalist visible drivetrain (Below).
-%             \end{block}
-%             \includegraphics[width=5cm]{UpperAssy}
-%         \end{column}
-%     \end{columns}
-%
-% \end{frame}
-%
-% \begin{frame}
-%     \frametitle{Initial Sketches (1/2)}
-%
-%     \begin{columns}
-%         \begin{column}{0.48\textwidth}
-%             \includegraphics[width=7cm]{../../Notes/Sketches/Basic Mock-Up Sketch.png}
-%         \end{column}
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{Initial Sketch}
-%                 Sketch design
-%             \end{block}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
-%
-% \begin{frame}
-%     \frametitle{Initial Sketches (2/2)}
-%
-%     \begin{columns}
-%         \begin{column}{0.48\textwidth}
-%             \begin{block}{Initial Sketch}
-%                 Stackup design for the pendulum bearing.
-%             \end{block}
-%         \end{column}
-%         \begin{column}{0.48\textwidth}
-%             \includegraphics[height=7cm]{../../Notes/Sketches/BearingStackup.jpg}
-%         \end{column}
-%     \end{columns}
-% \end{frame}
-%
-%
-% \begin{frame}
-%     \frametitle{End}
-%
-%     \begin{center}
-%         \includegraphics[height=1.5cm]{../../AJMK_Logo}
-%     \end{center}
-%
-%
-%     \begin{block}{}
-%         \begin{center}
-%             \Huge Questions and Comments?
-%         \end{center}
-%     \end{block}
-%
-%     \begin{center}
-%         Find the source code for this document, and the rest of our designs, firmware, hardware
-%         and notes on GitHub!
-%
-%         \includegraphics[height=2cm]{github_qr}
-%     \end{center}
-%
-% \end{frame}
-%
-%
+\includegraphics[width=5cm]{UpperAssy}
+\includegraphics[width=7cm]{../../Notes/Sketches/Basic Mock-Up Sketch.png}
+
+\vspace{1cm}
+\includegraphics[height=7cm]{../../Notes/Sketches/BearingStackup.jpg}
+
 \end{document}
