@@ -1,8 +1,6 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-% \usetheme{Madrid}
-% \usecolortheme{beaver}
 
 \usepackage{graphicx}
 \graphicspath{ {./Resources/} }
@@ -14,38 +12,34 @@
 
 \begin{document}
 
-% \frame{\titlepage} % Draw the title page
+\maketitle % Draw the title page
 
 
 \section{Stakeholders}
-\begin{itemize}           % Like this list!
-    \item Education (higher)
-    \item Education (lower)
-    \item Industrial training device
-    \item Educational Toy Industry
-\end{itemize}
 
+Stakeholders are the people and organizations who have a stake or say in the actual
+implementation and review of our proposed system, these include:
 
 \begin{itemize}
-    \item Professors
-    \item Teachers
-    \item Educators
-    \item On-Boarding / Hiring of Software Engineers
+    \item Educators and Acedemics,
+    \item Industrial Training
+    \item Producers of parts and service
 \end{itemize}
-
-
 
 
 \section{System Description}
 
-    We want a conveyor assembly controlled by a NEMA-17 motor, sliding on circular linear rods
-    using harmonic osculations to bring the pendulum to a starting position, and then hold there
-    using an embedded PID. The system will have three potentiometers, a TFT-screen, and a button on the user control panel. All encased in a transparent housing.
+A PID system is a general method for a computer or intelligent system to reduce the error
+or deviation in a system. Examples include the thermostat in a stove, the cruise control in a
+car or the gain control on a phone microphone.
 
+Our system aims to help display the fundamentals of a PID system in the form of a machine dedicated
+to allowing the operator to experiment with the tuning and functions behind the algorithm.
 
-    The users will be able to modify the PID values on the fly using the potentiometers to learn and experiment
-    with the concept of PID loops after the press of a button on the front of the user control panel.
-
+It will be constructed from steel and wood, powered by a single motor and a small processor
+and power supply, portable but robust enough to be installed in semi-permanent use.
+Weighing between 40 and 70lb, with a tft screen. The system will use a demo PID loop to
+balance an inverted pendulum and allow user input to control the rates and response of the loop.
 
 
 \section{Operational Environment}
