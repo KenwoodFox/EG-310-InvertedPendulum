@@ -58,3 +58,6 @@ fp-info-cache
 *.toc
 *.nav
 *.dvi
+*.idx
+*.ilg
+*.ind
