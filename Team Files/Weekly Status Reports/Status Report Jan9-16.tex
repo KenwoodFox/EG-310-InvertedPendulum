@@ -1,0 +1,76 @@
+% Formatting
+\documentclass{scrartcl}
+\usepackage{hyperref}
+\usepackage{makeidx}
+    \makeindex
+\usepackage{xparse}
+
+\usepackage[most]{tcolorbox}
+\NewDocumentCommand\newtcbtheoremautoindex{ O{} m  m m m }{%%
+\newtcbtheorem[#1]{#2inner}{#3}{#4}{#5}%
+\NewDocumentEnvironment { #2 } { s O{} m m }
+{\IfBooleanTF{##1}
+   {\begin{#2inner}[##2]{##3}{##4}}% not to index
+   {\begin{#2inner}[##2, index={##3}]{##3}{##4}}% to index
+} {\end{#2inner}}
+% starred version (not labeled and not listed in lists of theorems):
+\NewDocumentEnvironment { #2* } { O{} m }
+   {\begin{#2inner*}[##1]{##2}}% (and no index as well)
+   {\end{#2inner*}}
+}%%
+
+\newtcbtheoremautoindex[]{defi}{}{}{def}
+
+% End formatting
+
+% ====================
+% Begin Status report!
+% ====================
+
+\begin{document}
+\section*{EG-310 Weekly Status Report}
+\begin{center}
+    \begin{tabular}{ l l }
+        Project Lead     & Matt Handley          \\
+        Date             & \today         \\
+        Reporting Period & January 9 - 16
+    \end{tabular}
+\end{center}
+
+\begin{defi}{Project Status Summary}{}
+    \begin{tabular}{ l l r }
+        Budget   & On Track & We have not spent anything yet.         \\
+        Schedule & On Track & We are on schedule.                     \\
+        Scope    & On Track & We are within scope. (No Feature creep)
+    \end{tabular}
+\end{defi}
+
+\begin{defi}{Work Completed this week}{}
+    - Created drawings for carriage and belt tensioner assembly. \\
+    - Submitted ConOps Draft 1, and finalized and submitted our Project Schedule.
+\end{defi}
+
+\begin{defi}{Open issues}{}
+    % Check open issues https://github.com/KenwoodFox/EG-310-InvertedPendulum/issues
+    No issues and \href{https://github.com/KenwoodFox/EG-310-InvertedPendulum/pull/7}{one pull request} is waiting for feedback on ConOps.
+\end{defi}
+
+\begin{defi}{Todo for next week}{}
+    % Check projects tab https://github.com/users/KenwoodFox/projects/1
+    - Finalize PDP draft for submission on January 30, 2021.  \\ 
+    - Convert PDP data into a simplistic slideshow format. \\
+    - Create more sketches of subassemblies and identify subassemly requirements.
+\end{defi}
+
+\begin{defi}{Comments/Team Dynamics}{}
+    - Sunday's meeting was canceled as there was a schedule mix-up. \\
+    - Austin C. has been MIA for team meetings and has not responded through messaging.
+\end{defi}
+
+
+\pagebreak
+\section{Meeting Notes}
+% Include meeting notes verbatim
+\lstinputlisting[breaklines=true]{../Meeting Minutes/Week9-16.md}
+
+\end{document}
