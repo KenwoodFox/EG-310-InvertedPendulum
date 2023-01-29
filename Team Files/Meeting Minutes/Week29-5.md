@@ -10,7 +10,9 @@ Goals:
 
  - Review PDP
  - Put together some inital changes
+ - Upload system requirements
 
 Completed:
 
  - Implemented professor suggestions
+ - Upload system requirements
