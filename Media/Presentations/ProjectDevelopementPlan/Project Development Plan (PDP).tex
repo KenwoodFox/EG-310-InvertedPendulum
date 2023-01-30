@@ -1,7 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage[utf8]{inputenc}
-\usetheme{CambridgeUS}
+\usetheme{Madrid}
 \usecolortheme{beaver}
 
 \usepackage{graphicx}
@@ -39,7 +39,19 @@
 
 \begin{frame}
     \frametitle{Agenda}
-    \tiny{\tableofcontents}
+
+    \begin{columns}
+    \begin{column}{0.48\textwidth}
+        \small{\tableofcontents}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+        \begin{center}
+            \includegraphics[height=3cm]{../../AJMK_Logo}
+            \includegraphics[height=3cm]{Stencil.png}
+        \end{center}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \section{Research}
@@ -107,6 +119,34 @@
     \end{column}
 \end{columns}
 \end{frame}
+
+\begin{frame}
+    \frametitle{ConOps (cont.)}
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Operation and Support Environment}
+                \begin{itemize}
+                 \item Built from COTS (common off the shelf) parts
+                 \item Designed to be serviced
+                 \item Constant Uptime
+                 \item Low power modes
+                \end{itemize}
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Impact considerations}
+                \begin{itemize}
+                 \item Requiring physical space, either for storage or use.
+                 \item Being a hazard and risking misuse.
+                 \item Generating pollutants and disposal.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
 
 \section{Requirements}
 \subsection{System Requirements}
@@ -274,13 +314,13 @@
 
     \begin{columns}
         \begin{column}{0.48\textwidth}
-            \begin{block}{Sketch 1}
+            \begin{block}{Sketch 5}
                 \includegraphics[height=6cm]{Tension}
             \end{block}
         \end{column}
 
         \begin{column}{0.32\textwidth}
-            \begin{block}{Sketch 2}
+            \begin{block}{Sketch 6}
                 \includegraphics[height=6cm]{Carriage}
             \end{block}
         \end{column}
@@ -356,11 +396,11 @@
     \frametitle{Software Flowchart}
 
     \begin{columns}
-        \begin{column}{0.50\textwidth}
-            \includegraphics[height=7cm]{SoftwareFlowchart}
+        \begin{column}{0.72\textwidth}
+            \includegraphics[width=11cm]{SoftwareFlowchart}
         \end{column}
 
-        \begin{column}{0.40\textwidth}
+        \begin{column}{0.28\textwidth}
             \begin{block}{Software Flowchart}
                 The software flowchart is an overview of all the software functions of our
                 proposed product.
@@ -387,10 +427,25 @@
     \end{center}
 \end{frame}
 
+\section{Appendices}
 \begin{frame}
     \frametitle{References}
 
     \includegraphics[height=4cm]{references}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Complete Timeline}
+
+    \includegraphics[width=15cm]{project}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Calculations}
+
+    \includegraphics[height=6.5cm]{Calculations}
+
+    Octave math model.
 \end{frame}
 
 
