@@ -1,5 +1,7 @@
 \documentclass[aspectratio=169]{beamer}
 
+\setbeameroption{show notes on second screen}
+
 \usepackage[utf8]{inputenc}
 \usetheme{Madrid}
 \usecolortheme{beaver}
@@ -16,6 +18,8 @@
 \begin{document}
 
 \frame{\titlepage} % Draw the title page
+\note{Hello and thank you for listening, We're team \huge{AKMJ} \normalsize and we're very
+excited to present the PDP for our chosen product, the pendulum 328}
 
 \section{Introduction}
 \begin{frame}
@@ -35,6 +39,15 @@
     \end{block}
     \end{column}
 \end{columns}
+
+\note{Our goal
+\begin{itemize}
+ \item Make a PID Demonstrator that teaches the operator how to use a pid loop
+ \item control individual variables
+ \item balance the pendulum with PID
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
@@ -52,6 +65,14 @@
         \end{center}
     \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item We'll do questions at the end
+ \item Page numbers are in the bottom right, remember to note what page you'd like us to go back to!
+\end{itemize}
+}
+
 \end{frame}
 
 \section{Research}
@@ -76,6 +97,15 @@
         Uses a reaction wheel to develop a torque against falling over.
     \end{column}
 \end{columns}
+
+\note{
+\begin{itemize}
+ \item We performed research on other types of pid demonstrator
+ \item The rotary inverted pendulum rotates around to create the torque required to balance
+ \item A reaction wheel pendulum works like a spacecraft and manufactures a countertorque on the top instead of the bottom
+\end{itemize}
+}
+
 \end{frame}
 
 \section{ConOps}
@@ -118,6 +148,17 @@
         \end{block}
     \end{column}
 \end{columns}
+
+\note{
+\begin{itemize}
+ \item So our stakeholders include SNHU, our professors, industrial trainers and of course the people who supply parts and manfucacture our product.
+ \item At the moment, we're the ones manufacturing it but in the future it could be different.
+ \item Our users are us and educators who might want to use this product to teach the fundamnetals of PID
+ \item It has a few modes, Off, Idle, Spinup, Demo and user PID mode. The last two are where the pendulum self-balances
+ \item Its almost like a game, the system is naturally unstable, the pendulum wants to fall, but a properly tuned PID loop can keep it upright!
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
@@ -145,6 +186,14 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Being built from COTS parts allows us to easily replace components and design service schedules
+ \item We also have plans for a low power mode and folding or removable legs to decrease electrical and physical footprint.
+\end{itemize}
+}
+
 \end{frame}
 
 
@@ -167,6 +216,14 @@
             systems like an \textbf{emergency stop and guards}.
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Our requirements are the minimums we feel that we need to hit to make our system complete the task it was designed to do
+ \item Our most criical system requirements are to have a good user interface and to have saftey sytems like the emergency stop and gaurds.
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Performance Requirements}
@@ -186,6 +243,15 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Our system also has to perform well, and needs certian features such as auto balancing
+ \item self starting
+ \item and functioning buttons and controls
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Physical Requirement}
@@ -205,6 +271,16 @@
             involve proper use of \textbf{Material} and physical strength requirements.
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item There are some phsysical limits to our system as well, it needs to be
+ \item made from strong materials
+ \item have a long life
+ \item and be made from easily replacable, standard components wherever possible
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Risk Assessment}
@@ -225,6 +301,17 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Its important to consider the risks when designing a product, some of our most important considerations and \textbf{mitigations} are focused around
+ \item Pinch points
+ \item Moving parts
+ \item Electrical hazzards
+ \item and damage to the machine by normal training use.
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Enviormental Requirements}
@@ -245,6 +332,14 @@
             \textbf{dust and oils} as well.
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item We expect that our product will be used in some enviorment so we've developed requirements to target the sort of situations we think it will be used in
+ \item things like planning for dust ingress, skin oils, normal lubrication and air quality
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Engineering Standards}
@@ -264,6 +359,15 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Building to existing engineering standards reduces our workload,
+ \item promotes easier servicing in situ,
+ \item and makes our product safer by following established guidelines
+\end{itemize}
+}
+
 \end{frame}
 
 \section{Design Concepts}
@@ -283,6 +387,14 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Sketch 1 is our inital design concept drawn by Matt <3
+ \item Sketch 2 shows how our product may look sizewise compared to a 5'11" person
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
@@ -301,12 +413,27 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Sketch 3 is another view of our inital 3d model
+ \item and sketch 4 shows what our motor and trolley carriage may look like with belt between them
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Design Concepts (3)}
 
     \includegraphics[width=10cm]{CircuitBoard}
+
+\note{
+\begin{itemize}
+ \item We're nearing completion with our controller board.
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
@@ -325,6 +452,14 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Some more design concepts, on the left, a common cam-based belt tensioning method that reduces need to service the belt,
+ \item on the right we have the bearing stackup for our carriage.
+\end{itemize}
+}
+
 \end{frame}
 
 \begin{frame}
@@ -337,6 +472,13 @@
     and github task management, we plan and manage our team's productivity.
 
     \includegraphics[width=10cm]{ProjectPlan}
+
+\note{
+\begin{itemize}
+ \item We plan everything using ProjectLibre and github task management, Theres a larger copy of our ProjectLibre timeline at the end of the presentation.
+\end{itemize}
+}
+
 \end{frame}
 
 \section{Budget}
@@ -353,6 +495,13 @@
             We currently project spending \$250 to \$300 for our prototype.
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item So far we project we'll be underbudget, between \$250 and \$300
+\end{itemize}
+}
+
 \end{frame}
 
 \section{Diagrams}
@@ -372,6 +521,13 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Our block diagram shows how our software, hardware and electronics may interact in a final system
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Operations}
@@ -389,6 +545,15 @@
             \includegraphics[height=7cm]{Operations}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item The operations chart details our physical and general controls like the tft screen
+ \item the buttons
+ \item the motor controller and encoders
+\end{itemize}
+}
+
 \end{frame}
 
 \subsection{Software}
@@ -407,6 +572,13 @@
             \end{block}
         \end{column}
     \end{columns}
+
+\note{
+\begin{itemize}
+ \item Our software flowchart details how the PID control scheme will be interactable by the users
+\end{itemize}
+}
+
 \end{frame}
 
 \section{End}
@@ -425,6 +597,16 @@
 
         \includegraphics[height=2cm]{github_qr}
     \end{center}
+
+\note{
+\begin{itemize}
+ \item So please if you have any questions we would love to hear them.
+ \item All of our software, CAD, hardware and design docs are licensed under
+ \item \huge The MIT Open Source License \normalsize and available via git.
+ \item If you have a specific slide in mind we can go back to it!
+\end{itemize}
+}
+
 \end{frame}
 
 \section{Appendices}
