@@ -15,6 +15,7 @@ _build
 
 # Doc artifacts
 _*/
+~$*
 
 # Temporary files
 *.000
