@@ -7063,7 +7063,6 @@
     )
   )
 
-
   (junction (at 260.985 36.195) (diameter 0) (color 0 0 0 0)
     (uuid 08ca86e7-2f81-468b-9172-7c7907832173)
   )
@@ -8615,6 +8614,9 @@
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/7dc5268c-ae8d-4b14-ab23-b5a222371f4c"
       (reference "#PWR0145") (unit 1) (value "GND") (footprint "")
     )
+    (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/10c4f79a-188e-4b54-92ee-dced0559c4b2"
+      (reference "#PWR0146") (unit 1) (value "+5V") (footprint "")
+    )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/cbe3a40e-05d6-4b4c-bc71-d9a218a4165e"
       (reference "#PWR0201") (unit 1) (value "GND") (footprint "")
     )
@@ -8743,6 +8745,9 @@
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/315b65b6-c73a-4842-9b0d-fe7fa178eb60"
       (reference "J201") (unit 1) (value "ICSP") (footprint "Connector:Tag-Connect_TC2050-IDC-FP_2x05_P1.27mm_Vertical")
+    )
+    (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/83c8e56b-c4fe-4786-8f2f-9c613b956efb"
+      (reference "J202") (unit 1) (value "Limit") (footprint "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical")
     )
     (path "/ddccc170-e5f2-4630-b82e-7e46ab8f3eab/1a053b9d-361f-4562-aaf8-f4d6bf937fd0"
       (reference "J302") (unit 1) (value "19V Input") (footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-3-2-5.08_1x02_P5.08mm_Horizontal")
