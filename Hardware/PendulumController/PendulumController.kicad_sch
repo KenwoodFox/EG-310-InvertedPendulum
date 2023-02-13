@@ -8821,6 +8821,12 @@
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/27550787-fe76-4b4c-b971-8872d078979d"
       (reference "R406") (unit 1) (value "5K1") (footprint "Resistor_SMD:R_0805_2012Metric")
     )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/b826cf70-5f6e-494b-b125-7048a0630317"
+      (reference "R407") (unit 1) (value "22R") (footprint "Resistor_SMD:R_0805_2012Metric")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/f2c99e4c-d863-45a6-abe5-a0053466bf70"
+      (reference "R408") (unit 1) (value "22R") (footprint "Resistor_SMD:R_0805_2012Metric")
+    )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/06038177-2e74-4149-8ecc-090a0cb31be6"
       (reference "RV201") (unit 1) (value "P_Pot") (footprint "Connector_JST:JST_EH_B3B-EH-A_1x03_P2.50mm_Vertical")
     )
