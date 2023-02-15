@@ -4,7 +4,7 @@
 #define _BOARD_PINS_H
 
 // LEDs
-#define STAT_LED 13 // PB5
+#define STAT_LED 10 // PB2
 
 // Power Control
 #define ENABLE A2 // PC2
@@ -23,8 +23,9 @@
 #define START 9     // PB1
 
 // TFT Display
-#define TFT_RESET 4 // PD4
-#define TFT_CS 5    // PD5
-#define TFT_A0 6    // PD6
+#define TFT_RST 4 // PD4
+#define TFT_CS 5  // PD5
+#define SD_CS 6   // PD6
+#define TFT_DC 7  // PD7
 
 #endif
