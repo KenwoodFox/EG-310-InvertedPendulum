@@ -17,7 +17,7 @@ jobs:
     name: KiCad Hardware
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           submodules: true
@@ -59,7 +59,7 @@ jobs:
           python-version: "3.10"
           architecture: x64
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -129,7 +129,7 @@ jobs:
 
     steps:
       # Be in our repo
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -147,6 +147,9 @@ jobs:
       - run: cp *.pdf _staging/
 
       - run: cp *.step _staging/
+
+      # Copy CDR, PDR
+      - run: cp "Team Files/*.pdf" _staging/
 
       # Copy gerbers
       - run: cp PCBWay/*.zip _staging/Board-$(git rev-parse --short HEAD)-PCBWay.zip
