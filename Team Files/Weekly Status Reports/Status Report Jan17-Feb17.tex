@@ -5,6 +5,9 @@
     \makeindex
 \usepackage{xparse}
 
+\usepackage{graphicx}
+\graphicspath{ {.} }
+
 \usepackage[most]{tcolorbox}
 \NewDocumentCommand\newtcbtheoremautoindex{ O{} m  m m m }{%%
 \newtcbtheorem[#1]{#2inner}{#3}{#4}{#5}%
@@ -73,5 +76,11 @@
 \section{Meeting Notes}
 % Include meeting notes verbatim
 \lstinputlisting[breaklines=true]{../Meeting Minutes/Week29-17.md}
+
+\pagebreak
+\section{Releases Published This Week}
+
+\includegraphics[height=10cm]{v1.0 RC 1}
+\includegraphics[height=10cm]{v1.0}
 
 \end{document}
