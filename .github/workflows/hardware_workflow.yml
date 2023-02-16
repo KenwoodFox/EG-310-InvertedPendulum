@@ -17,7 +17,7 @@ jobs:
     name: KiCad Hardware
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
           submodules: true
@@ -59,12 +59,12 @@ jobs:
           python-version: "3.10"
           architecture: x64
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       # Do not cache
-      - run: sudo apt install texlive-latex-recommended texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
+      - run: sudo apt install texlive-latex-recommended pdftk texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
 
       - name: Install requirements
         run: pip install -r Docs/requirements.txt
@@ -75,12 +75,14 @@ jobs:
           name: Board-Hardware
           path: _hardwareOutput
 
-      # Convert svg graphics
-      - run: convert -density 300 _hardwareOutput/PendulumController-schematic.svg _hardwareOutput/PendulumController-schematic.png
-
+        # Make the latex docs
       - run: cd Docs && make latexpdf
 
-      - run: mv Docs/_build/latex/*.pdf Docs/_build/latex/Board-Manual.pdf
+        # Move the board manual
+      - run: mv Docs/_build/latex/*.pdf Docs/_build/latex/Board-Manual-Only.pdf
+
+        # Combine together
+      - run: pdftk Docs/_build/latex/Board-Manual-Only.pdf _hardwareOutput/PendulumController-schematic.pdf cat output Docs/_build/latex/Board-Manual.pdf
 
       - uses: actions/upload-artifact@v2
         with:
@@ -127,7 +129,7 @@ jobs:
 
     steps:
       # Be in our repo
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -145,6 +147,9 @@ jobs:
       - run: cp *.pdf _staging/
 
       - run: cp *.step _staging/
+
+      # Copy CDR, PDR
+      - run: cp "Team Files/*.pdf" _staging/
 
       # Copy gerbers
       - run: cp PCBWay/*.zip _staging/Board-$(git rev-parse --short HEAD)-PCBWay.zip

@@ -38,7 +38,7 @@ variants:
 outputs:
   - name: "Images"
     comment: "Schematics and media for use in docs"
-    type: svg_sch_print
+    type: pdf_sch_print
 
   - name: "3D Models"
     comment: "3D Models"
