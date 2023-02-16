@@ -149,7 +149,7 @@ jobs:
       - run: cp *.step _staging/
 
       # Copy CDR, PDR
-      - run: cp "Team Files/*.pdf" _staging/
+      - run: cp Team\ Files/*.pdf _staging/
 
       # Copy gerbers
       - run: cp PCBWay/*.zip _staging/Board-$(git rev-parse --short HEAD)-PCBWay.zip
