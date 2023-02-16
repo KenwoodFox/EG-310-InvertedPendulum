@@ -7,3 +7,4 @@ Welcome to Team Gold's Climate Monitoring System documentation!
 
    introduction/getting-started
    service/service
+   service/assembly
