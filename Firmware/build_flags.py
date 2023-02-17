@@ -47,6 +47,8 @@ if username == "root":
     username = "github"
     host = "github"
 
+print(f"-DREV='\"Version {revision}\"'")
+
 # Colors!
 revision = revision.replace("dirty", "\x1B[31mdirty\x1B[0m")
 host = "\x1B[34m" + host + "\x1B[0m"
