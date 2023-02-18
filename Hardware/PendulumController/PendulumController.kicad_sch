@@ -8649,10 +8649,10 @@
       (reference "C102") (unit 1) (value "EYE_SP") (footprint "Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal")
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/c0ce7dd2-4453-4f3d-8f62-f6b99755f34e"
-      (reference "C201") (unit 1) (value "100nf") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C201") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/852ee9b3-8700-479c-9f98-108367e6a8b1"
-      (reference "C202") (unit 1) (value "100nf") (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (reference "C202") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0805_2012Metric")
     )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/9cbf446e-0d6d-4b5b-973c-005ac9ffac8f"
       (reference "C203") (unit 1) (value "22pf") (footprint "Capacitor_SMD:C_0805_2012Metric")
