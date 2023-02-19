@@ -295,10 +295,23 @@
 \begin{frame}
     \frametitle{Safety}
 
-    Content here
+    \begin{columns}
+        \begin{column}{0.75\textwidth}
+            \begin{block}{Our Safety Statement}
+                One concern for public health in our design is the swinging pendulum itself which can hit and hurt someone if not used properly or tamper with the safety mechanisms in place on the system. The safety mechanism in place is a hard stop button if the system malfunctions. It serves to stop the system cold as well as a mechanism to detect if the pendulum hits something such that it will stop the system as well. In addition to those we plan to implement a screen between the user and the swinging pendulum. Another concern is the electronics inside overheating and causing fire. This is presented by the operation conditions to be placed in a lab room. To combat this the system has very low voltage running it such that overheating causing damage or fire is unlikely even with constant use.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.20\textwidth}
+            We know our product presents some safety concerns. We've developed
+            requirements for safe operation such as \textbf{shields} and
+            \textbf{software limits}.
+        \end{column}
+    \end{columns}
 
     \note{
-        Notes here
+        Shields, software limits, and our overall design philosophy drives
+        a safe system.
     }
 \end{frame}
 
@@ -313,6 +326,60 @@
     }
 \end{frame}
 
+\section{Calibration and Maintenance}
+\begin{frame}
+    \frametitle{Calibration and Maintenance}
+
+    Content here
+
+    \note{
+        Notes here
+    }
+\end{frame}
+
+\section{Subsystems}
+\begin{frame}
+    \frametitle{The Mechanical Subsystem}
+
+    Content here
+
+    \note{
+        Notes here
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Software/Electrical Subsystem}
+
+    \includegraphics[height=7cm]{CircuitBoard}
+
+    \note{
+        In our system the software and hardware are very closely
+        linked.
+
+        We have several features such as the E-Stop that
+        rely heavily on an integration between embedded code
+        and physical electrical hardware interlocks.
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Software/Electrical Subsystem (cont.)}
+
+    \includegraphics[height=7cm]{Schematic}
+
+    \note{
+        We've designed the general circuitry to take advantage of every
+        safety feature the 328p offers such as:
+        \begin{enumerate}
+         \item A hardware watchdog
+         \item Integrated current monitoring
+         \item A standby shutdown
+         \item And an integrated clock
+        \end{enumerate}
+
+    }
+\end{frame}
 
 \begin{frame}
     \frametitle{Calibration and Maintenance}
@@ -324,7 +391,7 @@
     }
 \end{frame}
 
-
+\section{CDR Specifics}
 \begin{frame}
     \frametitle{Verification Plan}
 
@@ -338,17 +405,6 @@
 
 \begin{frame}
     \frametitle{Phase D}
-
-    Content here
-
-    \note{
-        Notes here
-    }
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Ethics}
 
     Content here
 
@@ -420,7 +476,7 @@
 
     \begin{columns}
         \begin{column}{0.72\textwidth}
-            \includegraphics[width=11cm]{SoftwareFlowchart}
+            \includegraphics[width=11cm]{Operation}
         \end{column}
 
         \begin{column}{0.28\textwidth}
