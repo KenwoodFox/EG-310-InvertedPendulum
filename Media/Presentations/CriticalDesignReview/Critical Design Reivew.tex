@@ -396,12 +396,74 @@
 
 \section{CDR Specifics}
 \begin{frame}
-    \frametitle{Verification Plan}
+    \frametitle{Verification Plan (Electrical/Software)}
 
-    Content here
+    \begin{columns}
+        \begin{column}{0.58\textwidth}
+            \includegraphics[width=8.5cm]{ElectricalPrototype}
+        \end{column}
+
+        \begin{column}{0.40\textwidth}
+            \begin{block}{Block Diagram}
+                \tiny{
+                    Mainboard requires several important features:
+                    \begin{enumerate}
+                        \item E-Stop
+                        \item Button Inputs
+                        \item Potentiometers
+                        \item Encoder
+                        \item Motor output
+                        \item Limit Switch
+                        \item TFT Screen
+                    \end{enumerate}
+
+                    The prototype board implements all these features as well as...
+                    \begin{enumerate}
+                        \item USB Programming/debugging
+                        \item Status lights
+                        \item Mode and start select buttons
+                        \item Onboard VRM
+                    \end{enumerate}
+                }
+            \end{block}
+        \end{column}
+    \end{columns}
 
     \note{
-        Notes here
+        The electrical components must adheere to the standards we set
+        and must pass our tests
+
+        The most important tests are that the board \textbf{Generally Functions}
+        and that we can \textbf{Program and Debug} it without an external
+        programmer.
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Verification Plan (Mechanical)}
+
+    \begin{columns}
+        \begin{column}{0.40\textwidth}
+            \begin{block}{Block Diagram}
+                \tiny{
+                    Each bearing is tested and evaluated with the above chart, with specific attention to:
+                    \begin{enumerate}
+                        \item Cost of bearing (4 needed for every pendulum)
+                        \item Noise (Minimize sliding grinding noises)
+                        \item Performance (How well does it slide and protect the carriage shafts)
+                        \item Longevity (How long does it last without service or lube?)
+                    \end{enumerate}
+                }
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.58\textwidth}
+            \includegraphics[width=8.5cm]{MechanicalPrototype}
+        \end{column}
+    \end{columns}
+
+    \note{
+        Might need matt input
     }
 \end{frame}
 
