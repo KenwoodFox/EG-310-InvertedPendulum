@@ -43,7 +43,7 @@ public:
     /**
      * @brief Construct a new loading object
      *
-     * @param complete 0 - 255 how complete
+     * @param complete 0 - 100 how complete
      */
     void loading(byte complete);
 };

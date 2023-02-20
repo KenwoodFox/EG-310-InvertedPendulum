@@ -46,12 +46,14 @@ void Display::loading(byte complete)
 {
     byte loadHeight = 24;
     byte loadGap = 12;
-
     byte barLen = scrWidth - (loadGap * 4);
+
+    // Completion dist
+    byte cdist = map(complete, 0, 100, 0, 124);
 
     // Border
     tft.fillRoundRect(loadGap, (scrHeight / 2) - (loadHeight / 2), barLen, loadHeight, 6, ST77XX_BLUE);
 
     // Actual loading bar
-    tft.fillRoundRect(loadGap + 4, (scrHeight / 2) - ((loadHeight - 8) / 2), barLen - 8, loadHeight - 8, 6, ST77XX_BLACK);
+    tft.fillRoundRect(loadGap + 4 + cdist, (scrHeight / 2) - ((loadHeight - 8) / 2), barLen - 8 - cdist, loadHeight - 8, 6, ST77XX_BLACK);
 };
