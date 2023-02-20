@@ -48,13 +48,5 @@ if username == "root":
     host = "github"
 
 print(f"-DREV='\"Version {revision}\"'")
-
-# Colors!
-revision = revision.replace("dirty", "\x1B[31mdirty\x1B[0m")
-host = "\x1B[34m" + host + "\x1B[0m"
-username = "\x1B[34m" + username + "\x1B[0m"
-
-
-motd = f"\\r\\nStarting pendulum demo.\\r\\nThis software expects your terminal to be \x1B[46mVT100 Compatable\x1B[0m,\\r\\n\\r\\nUsing version {revision}.\\r\\ncompiled on {today.strftime('%B %d, %Y')} by {username} using {host}.\\r\\n\\r\\n"
-
-print(f"-DMOTD='\"{motd}\"'")
+print(f"-DBUILDER='\"Version {username}\"'")
+print(f"-DHOST='\"Version {host}\"'")
