@@ -1,5 +1,5 @@
-Welcome to Team Gold's Climate Monitoring System documentation!
-===============================================================
+Pendulum328 Docs
+================
 
 .. toctree::
    :maxdepth: 3
