@@ -52,8 +52,34 @@ void Display::loading(byte complete)
     byte cdist = map(complete, 0, 100, 0, 124);
 
     // Border
-    tft.fillRoundRect(loadGap, (scrHeight / 2) - (loadHeight / 2), barLen, loadHeight, 6, ST77XX_BLUE);
+    tft.fillRoundRect(loadGap, (scrHeight / 2) - (loadHeight / 2), barLen, loadHeight, 6, ST77XX_ORANGE);
 
     // Actual loading bar
     tft.fillRoundRect(loadGap + 4 + cdist, (scrHeight / 2) - ((loadHeight - 8) / 2), barLen - 8 - cdist, loadHeight - 8, 6, ST77XX_BLACK);
+};
+
+void Display::beginPlot()
+{
+    // Fill the screen
+    tft.fillScreen(ST77XX_BLACK);
+};
+
+void Display::plot(int v, byte scale)
+{
+    // Draw the point
+    tft.drawLine(plotWriteHeadPos + 3, (scrHeight / 2) + lastY, plotWriteHeadPos + 4, (scrHeight / 2) + v, ST77XX_RED);
+    plotWriteHeadPos++;
+
+    if (plotWriteHeadPos > scrWidth)
+    {
+        plotWriteHeadPos = 0;
+    }
+    else
+    {
+        // Record lasts
+        lastY = v;
+    }
+
+    // Erase head follows! (ominus)
+    tft.drawLine(plotWriteHeadPos + 20, 0, plotWriteHeadPos + 20, scrHeight, ST77XX_BLACK);
 };

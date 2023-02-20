@@ -21,8 +21,13 @@ class Display
 private:
     Adafruit_ST7735 tft;
 
+    // General
     const byte scrWidth = 180;
     const byte scrHeight = 128;
+
+    // Plotting
+    byte plotWriteHeadPos = 0; // The point the plot write head was last on.
+    int lastY = 0;             // The last y pos
 
 public:
     /**
@@ -46,4 +51,18 @@ public:
      * @param complete 0 - 100 how complete
      */
     void loading(byte complete);
+
+    /**
+     * @brief Draws the header and footer and things for the main plot window
+     *
+     */
+    void beginPlot();
+
+    /**
+     * @brief Plot v from top to bottom
+     *
+     * @param v The value plotted
+     * @param scale The scale its plotted on
+     */
+    void plot(int v, byte scale = 100);
 };

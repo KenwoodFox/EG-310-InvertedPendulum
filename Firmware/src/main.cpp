@@ -30,9 +30,13 @@ void setup(void)
 
     // Done loading
     tft.loading(100);
+
+    tft.beginPlot();
 }
 
 void loop()
 {
-    delay(500);
+    // Plottable
+    tft.plot(sin(millis()) * 25);
+    delay(5);
 }
