@@ -1,5 +1,6 @@
 [![Display Hardware](https://github.com/KenwoodFox/EG-310-InvertedPendulum/actions/workflows/hardware_workflow.yml/badge.svg)](https://github.com/KenwoodFox/EG-310-InvertedPendulum/actions/workflows/hardware_workflow.yml)
 [![Firmware Workflow](https://github.com/KenwoodFox/EG-310-InvertedPendulum/actions/workflows/firmware_workflow.yml/badge.svg)](https://github.com/KenwoodFox/EG-310-InvertedPendulum/actions/workflows/firmware_workflow.yml)
+[![Documentation Status](https://readthedocs.org/projects/eg-310-invertedpendulum/badge/?version=latest)](https://eg-310-invertedpendulum.readthedocs.io/en/latest/?badge=latest)
 [![Discord](https://img.shields.io/discord/914358168379867216.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/Eczua62m7v)
 
 EG-310 Inverted Pendulum
