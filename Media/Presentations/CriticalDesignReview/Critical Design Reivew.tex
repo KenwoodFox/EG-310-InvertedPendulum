@@ -228,6 +228,46 @@
     }
 \end{frame}
 
+\begin{frame}
+    \frametitle{Summary of Trade Studies (cont.)}
+
+    \begin{columns}
+        \begin{column}{0.70\textwidth}
+            \includegraphics[width=10.5cm]{MetalTradeStudy}
+        \end{column}
+
+        \begin{column}{0.28\textwidth}
+            \begin{block}{Metal}
+                The metal we select affects safety and cost.
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \note{
+        Notes here
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Summary of Trade Studies (cont.)}
+
+    \begin{columns}
+        \begin{column}{0.28\textwidth}
+            \begin{block}{NEMA Motor Choice}
+                The specific type of stepper motor impacts strngth and idle power.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.70\textwidth}
+            \includegraphics[width=10.5cm]{MotorTradeStudy2}
+        \end{column}
+    \end{columns}
+
+    \note{
+        Notes here
+    }
+\end{frame}
+
 \section{Requirements}
 \begin{frame}
     \frametitle{Functional Requirements}
@@ -342,7 +382,11 @@
 \begin{frame}
     \frametitle{Impact Considerations}
 
-    Content here
+    \begin{enumerate}
+        \item Being a hazard and risking misuse.
+        \item Requiring physical space, either for storage or use.
+        \item The system will generate waste at the end of its life cycle. The goal is to minimize this waste through the use of recyclable materials
+    \end{enumerate}
 
     \note{
         Notes here
@@ -353,7 +397,12 @@
 \begin{frame}
     \frametitle{Calibration and Maintenance}
 
-    Content here
+    \begin{enumerate}
+        \item The system shall perform a self-test on start-up. Due to the pendulum hanging towards the center of the earth due to gravity, the encoder on the pendulum will be zeroed using the position.
+        \item The motor shall move towards a limit switch at a set slow speed until it triggers one of the two limit switches on either side of the linear rails, upon triggering one, the carriage will then move a set amount of motor steps to the middle of the span of the linear rails.
+        \item All fasteners shall have their tightness ensured before operation, and any renewal of lubrical for the pendulum shall be performed.
+        \item A maintenance and component replacement manual shall be created in order to easily explain how to replace the COTS (common of the shelf) parts such as the precision belt or the motor internals.
+    \end{enumerate}
 
     \note{
         Notes here
@@ -364,10 +413,10 @@
 \begin{frame}
     \frametitle{The Mechanical Subsystem}
 
-    Content here
+    \includegraphics[width=15cm]{MechanicalSubsystem}
 
     \note{
-        Notes here
+        Thank you austin!
     }
 \end{frame}
 
@@ -660,5 +709,26 @@
     \includegraphics[height=6cm]{closeup5}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Calculations}
+
+    \includegraphics[height=6.5cm]{Calculations}
+
+    Octave math model.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Calculations (cont.)}
+
+    \includegraphics[height=6.5cm]{CalculationsMatt}
+
+    Hand math model.
+\end{frame}
+
+\begin{frame}
+    \frametitle{References}
+
+    \includegraphics[width=12cm]{CDRReferences}
+\end{frame}
 
 \end{document}
