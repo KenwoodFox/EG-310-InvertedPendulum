@@ -26,20 +26,9 @@ void setup(void)
     tft.begin();
     tft.loading(0); // Update the loading bar
 
-    delay(200);
-    tft.loading(10);
+    // Do stuff in here
 
-    delay(200);
-    tft.loading(30);
-    delay(100);
-    tft.loading(70);
-    delay(500);
-    tft.loading(95);
-    delay(500);
-    tft.loading(96);
-    delay(500);
-    tft.loading(97);
-    delay(900);
+    // Done loading
     tft.loading(100);
 }
 
