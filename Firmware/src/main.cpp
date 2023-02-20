@@ -27,9 +27,14 @@ void setup(void)
     tft.loading(0); // Update the loading bar
 
     // Do stuff in here
+    tft.loading(5);
+    delay(100);
+    tft.loading(90);
+    delay(500);
 
     // Done loading
     tft.loading(100);
+    delay(50);
 
     tft.beginPlot();
 }
@@ -37,6 +42,6 @@ void setup(void)
 void loop()
 {
     // Plottable
-    tft.plot(sin(millis()) * 25);
-    delay(5);
+    tft.plot(sin(millis() / 100) * 40);
+    delay(20);
 }

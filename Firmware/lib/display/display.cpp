@@ -37,7 +37,12 @@ void Display::begin()
     tft.setCursor(4, 4);
     tft.setTextColor(ST77XX_WHITE);
     tft.print("Greatness Awaits");
-    tft.setCursor(4, scrHeight - 4 - 8);
+    printVersion();
+}
+
+void Display::printVersion()
+{
+    tft.setCursor(4, scrHeight - 11);
     tft.setTextColor(ST77XX_WHITE);
     tft.print(REV);
 }
@@ -62,17 +67,33 @@ void Display::beginPlot()
 {
     // Fill the screen
     tft.fillScreen(ST77XX_BLACK);
+
+    // Draw decorational Border
+    tft.fillRoundRect(8, 12, scrWidth + 4, scrHeight - 24, 8, ST7735_ORANGE);
+    tft.fillRect(graphMargin, 14, scrWidth, scrHeight - 28, ST7735_BLACK);
+
+    // Fill in
+    tft.setCursor(4, 4);
+    tft.setTextColor(ST77XX_WHITE);
+    tft.print("P: 0.1, I: 0.1, D: 0.1");
+    printVersion();
 };
 
 void Display::plot(int v, byte scale)
 {
-    // Draw the point
-    tft.drawLine(plotWriteHeadPos + 3, (scrHeight / 2) + lastY, plotWriteHeadPos + 4, (scrHeight / 2) + v, ST77XX_RED);
-    plotWriteHeadPos++;
+    // Check if its valid to draw here or not
+    if (abs(v) < maxValue and plotWriteHeadPos - 24 > graphMargin)
+    {
 
+        // Draw the point
+        tft.drawLine(plotWriteHeadPos - 24, (scrHeight / 2) + lastY, plotWriteHeadPos - 23, (scrHeight / 2) + v, ST77XX_RED);
+    }
+
+    // Advance write head
+    plotWriteHeadPos++;
     if (plotWriteHeadPos > scrWidth)
     {
-        plotWriteHeadPos = 0;
+        plotWriteHeadPos = graphMargin;
     }
     else
     {
@@ -81,5 +102,12 @@ void Display::plot(int v, byte scale)
     }
 
     // Erase head follows! (ominus)
-    tft.drawLine(plotWriteHeadPos + 20, 0, plotWriteHeadPos + 20, scrHeight, ST77XX_BLACK);
+    tft.drawLine(plotWriteHeadPos, graphMargin, plotWriteHeadPos, scrHeight - (graphMargin)-1, ST77XX_BLACK);
+
+    // Draw lines
+    tft.drawPixel(plotWriteHeadPos, scrHeight / 2, ST7735_ORANGE);
+    // if (plotWriteHeadPos % 50 == 0)
+    // {
+    //     tft.drawLine(plotWriteHeadPos, 15, plotWriteHeadPos, maxValue + (scrHeight / 2), ST7735_YELLOW);
+    // }
 };

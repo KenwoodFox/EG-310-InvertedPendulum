@@ -26,8 +26,13 @@ private:
     const byte scrHeight = 128;
 
     // Plotting
-    byte plotWriteHeadPos = 0; // The point the plot write head was last on.
-    int lastY = 0;             // The last y pos
+    const byte graphMargin = 14;                        // Margin for graphing
+    byte plotWriteHeadPos = graphMargin;                // The point the plot write head was last on.
+    const int maxValue = (scrHeight / 2) - graphMargin; // Max allowable value to draw on the graph
+    int lastY = 0;                                      // The last y pos
+
+    // Just puts the version on the screen
+    void printVersion();
 
 public:
     /**
