@@ -49,7 +49,49 @@
 }
 \end{frame}
 
-\section{ConOps Summary}
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{What is PID}
+
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{What is PID}
+                PID (Proportional, Integral, Derivative),
+                is an algorithm designed to minimize the
+                \textbf{error} in a system.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Where do we see PID loops?}
+                The error can be any error, as long as it can be measured.
+                \begin{itemize}
+                 \item Cruise Control in a car (speed of the car)
+                 \item Thermostats (Temperature)
+                 \item Engine governors (Torque output)
+                 \item Laptop fan controller (Dissipated heat)
+                 \item Dynamic CPU turbo scaling (Optimal performance)
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \note{
+        A PID loop should be familer to many engineers but in short, its a method for
+        minimizing the error in a system.
+
+        The system can be any system, as long as its error can be measured, some common
+        examples include
+        \begin{itemize}
+         \item Cruise control
+         \item Thermostats
+         \item Engine govoners
+         \item Fan controllers
+         \item And CPU Turbo scaling
+        \end{itemize}
+    }
+\end{frame}
 
 \begin{frame}
     \frametitle{High level Overview}
@@ -81,6 +123,30 @@
     }
 \end{frame}
 
+\begin{frame}
+    \frametitle{Block Diagram}
+
+    \begin{columns}
+        \begin{column}{0.70\textwidth}
+            \includegraphics[height=7cm]{BlockDiagram}
+        \end{column}
+
+        \begin{column}{0.30\textwidth}
+            \begin{block}{Block Diagram}
+                The block diagram details the electrical, mechanical and software components and their relationship to each other.
+            \end{block}
+        \end{column}
+    \end{columns}
+
+\note{
+\huge Matt \normalsize
+
+\begin{itemize}
+ \item Our block diagram shows how our software, hardware and electronics may interact in a final system
+\end{itemize}
+}
+
+\end{frame}
 
 \begin{frame}
     \frametitle{ConOps Summary}
@@ -173,7 +239,40 @@
 
 \end{frame}
 
-\section{Studies}
+\section{Software/Electrical}
+\begin{frame}
+    \frametitle{The Software/Electrical Subsystem}
+
+    \includegraphics[height=7cm]{CircuitBoard}
+
+    \note{
+        In our system the software and hardware are very closely
+        linked.
+
+        We have several features such as the E-Stop that
+        rely heavily on an integration between embedded code
+        and physical electrical hardware interlocks.
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Software/Electrical Subsystem (cont.)}
+
+    \includegraphics[height=7cm]{Schematic}
+
+    \note{
+        We've designed the general circuitry to take advantage of every
+        safety feature the 328p offers such as:
+        \begin{enumerate}
+         \item A hardware watchdog
+         \item Integrated current monitoring
+         \item A standby shutdown
+         \item And an integrated clock
+        \end{enumerate}
+
+    }
+\end{frame}
+
 \begin{frame}
     \frametitle{Summary of Trade Studies}
 
@@ -193,29 +292,11 @@
     \end{columns}
 
     \note{
-        Notes here
-    }
-\end{frame}
+        The way that the user interacts with the system is very important to our project.
+        We want a product that will effectively communicate how and why a PID loop
+        works.
 
-\begin{frame}
-    \frametitle{Summary of Trade Studies (cont.)}
-
-    \begin{columns}
-        \begin{column}{0.28\textwidth}
-            \begin{block}{Bearings}
-                Choosing bearings that meet our minimum requirements
-                helps us to design a system that meets the needs we
-                expect to solve.
-            \end{block}
-        \end{column}
-
-        \begin{column}{0.70\textwidth}
-            \includegraphics[width=10.5cm]{BearingsTradeStudy}
-        \end{column}
-    \end{columns}
-
-    \note{
-        Notes here
+        Our chart places the TFT plus buzzer, plus buttons as the best for our requirements.
     }
 \end{frame}
 
@@ -232,6 +313,123 @@
                 We use our requirements to balance weight, sound
                 cost and performance.
             \end{block}
+        \end{column}
+    \end{columns}
+
+    \note{
+        The motor we choose will affect performance as well as noise and cost. We
+        decided to go with a simple stepper motor.
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Software Flowchart}
+
+    \begin{columns}
+        \begin{column}{0.72\textwidth}
+            \includegraphics[width=11cm]{Operation}
+        \end{column}
+
+        \begin{column}{0.28\textwidth}
+            \begin{block}{Software Flowchart}
+                The software flowchart is an overview of all the software functions of our
+                proposed product.
+            \end{block}
+        \end{column}
+    \end{columns}
+
+\note{
+\huge Austin \normalsize
+
+\begin{itemize}
+ \item Our software flowchart details how the PID control scheme will be interactable by the users
+\end{itemize}
+}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Verification Plan (Electrical/Software)}
+
+    \begin{columns}
+        \begin{column}{0.58\textwidth}
+            \includegraphics[width=8.5cm]{ElectricalPrototype}
+        \end{column}
+
+        \begin{column}{0.40\textwidth}
+            \begin{block}{Block Diagram}
+                \tiny{
+                    Mainboard requires several important features:
+                    \begin{enumerate}
+                        \item E-Stop
+                        \item Button Inputs
+                        \item Potentiometers
+                        \item Encoder
+                        \item Motor output
+                        \item Limit Switch
+                        \item TFT Screen
+                    \end{enumerate}
+
+                    The prototype board implements all these features as well as...
+                    \begin{enumerate}
+                        \item USB Programming/debugging
+                        \item Status lights
+                        \item Mode and start select buttons
+                        \item Onboard VRM
+                    \end{enumerate}
+                }
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \note{
+        The electrical components must adheere to the standards we set
+        and must pass our tests
+
+        The most important tests are that the board \textbf{Generally Functions}
+        and that we can \textbf{Program and Debug} it without an external
+        programmer.
+    }
+\end{frame}
+
+\section{Mechanical System}
+\begin{frame}
+    \frametitle{The Mechanical Subsystem}
+
+    \includegraphics[width=15cm]{MechanicalSubsystem}
+
+    \note{
+        Thank you austin!
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{System Design}
+
+    \includegraphics[width=10.5cm]{exploded}
+
+    \note{
+        Done by matt
+
+        Note that the tubing contains all cutouts and motor mounts, eliminating
+        the need for expensive dedicated brackets and fixtures.
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Summary of Trade Studies}
+
+    \begin{columns}
+        \begin{column}{0.28\textwidth}
+            \begin{block}{Bearings}
+                Choosing bearings that meet our minimum requirements
+                helps us to design a system that meets the needs we
+                expect to solve.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.70\textwidth}
+            \includegraphics[width=10.5cm]{BearingsTradeStudy}
         \end{column}
     \end{columns}
 
@@ -300,6 +498,61 @@
     }
 \end{frame}
 
+\begin{frame}
+    \frametitle{Operations}
+
+    \begin{columns}
+        \begin{column}{0.30\textwidth}
+            \begin{block}{Operations}
+                The Operations diagram details the physical and general controls.
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.70\textwidth}
+            \includegraphics[height=7cm]{Operations}
+        \end{column}
+    \end{columns}
+
+\note{
+\huge Joe \normalsize
+
+\begin{itemize}
+ \item The operations chart details our physical and general controls like the tft screen
+ \item the buttons
+ \item the motor controller and encoders
+\end{itemize}
+}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Verification Plan (Mechanical)}
+
+    \begin{columns}
+        \begin{column}{0.40\textwidth}
+            \begin{block}{Block Diagram}
+                \tiny{
+                    Each bearing is tested and evaluated with the above chart, with specific attention to:
+                    \begin{enumerate}
+                        \item Cost of bearing (4 needed for every pendulum)
+                        \item Noise (Minimize sliding grinding noises)
+                        \item Performance (How well does it slide and protect the carriage shafts)
+                        \item Longevity (How long does it last without service or lube?)
+                    \end{enumerate}
+                }
+            \end{block}
+        \end{column}
+
+        \begin{column}{0.58\textwidth}
+            \includegraphics[width=8.5cm]{MechanicalPrototype}
+        \end{column}
+    \end{columns}
+
+    \note{
+        Might need matt input
+    }
+\end{frame}
+
 \section{Requirements}
 \begin{frame}
     \frametitle{Functional Requirements}
@@ -343,19 +596,6 @@
 
 \section{Design}
 \begin{frame}
-    \frametitle{System Design}
-
-    \includegraphics[width=10.5cm]{exploded}
-
-    \note{
-        Done by matt
-
-        Note that the tubing contains all cutouts and motor mounts, eliminating
-        the need for expensive dedicated brackets and fixtures.
-    }
-\end{frame}
-
-\begin{frame}
     \frametitle{Bill Of Materials}
 
     \includegraphics[height=7cm]{BOMTable}
@@ -384,30 +624,6 @@
     \begin{block}{3D/plastic/COTS}
         Material stock for welding, 3D printing and machining are ready to go.
     \end{block}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Safety}
-
-    \begin{columns}
-        \begin{column}{0.75\textwidth}
-            \begin{block}{Our Safety Statement}
-                One concern for public health in our design is the swinging pendulum itself which can hit and hurt someone if not used properly or tamper with the safety mechanisms in place on the system. The safety mechanism in place is a hard stop button if the system malfunctions. It serves to stop the system cold as well as a mechanism to detect if the pendulum hits something such that it will stop the system as well. In addition to those we plan to implement a screen between the user and the swinging pendulum. Another concern is the electronics inside overheating and causing fire. This is presented by the operation conditions to be placed in a lab room. To combat this the system has very low voltage running it such that overheating causing damage or fire is unlikely even with constant use.
-            \end{block}
-        \end{column}
-
-        \begin{column}{0.20\textwidth}
-            We know our product presents some safety concerns. We've developed
-            requirements for safe operation such as \textbf{shields} and
-            \textbf{software limits}.
-        \end{column}
-    \end{columns}
-
-    \note{
-        Shields, software limits, and our overall design philosophy drives
-        a safe system.
-    }
 \end{frame}
 
 
@@ -441,61 +657,29 @@
     }
 \end{frame}
 
-\section{Subsystems}
-\begin{frame}
-    \frametitle{The Mechanical Subsystem}
-
-    \includegraphics[width=15cm]{MechanicalSubsystem}
-
-    \note{
-        Thank you austin!
-    }
-\end{frame}
-
-\begin{frame}
-    \frametitle{The Software/Electrical Subsystem}
-
-    \includegraphics[height=7cm]{CircuitBoard}
-
-    \note{
-        In our system the software and hardware are very closely
-        linked.
-
-        We have several features such as the E-Stop that
-        rely heavily on an integration between embedded code
-        and physical electrical hardware interlocks.
-    }
-\end{frame}
-
-\begin{frame}
-    \frametitle{The Software/Electrical Subsystem (cont.)}
-
-    \includegraphics[height=7cm]{Schematic}
-
-    \note{
-        We've designed the general circuitry to take advantage of every
-        safety feature the 328p offers such as:
-        \begin{enumerate}
-         \item A hardware watchdog
-         \item Integrated current monitoring
-         \item A standby shutdown
-         \item And an integrated clock
-        \end{enumerate}
-
-    }
-\end{frame}
-
 \begin{frame}
     \frametitle{Safety}
 
-    Health and Safety Design Features:
-    \begin{enumerate}
-        \item Protective shielding around the pendulum’s range of motion to avoid pinch points and physical contact.
-        \item Capacitive e-stop and manual e-stop in case of emergency.
-        \item All electrical components are grounded to prevent dangerous discharge.
-        \item All components shall be ventilated and fan cooled to regulate temperatures.
-        \item Access to embedded components shall be easy to clean the machine and remove dust and debris.
-    \end{enumerate}
+    \begin{itemize}
+     \item Electrical
+        \begin{itemize}
+         \item E-Touch - Capacitive sensor that detects when a user has provided a static charge or short circuit and will automatically turn off the power
+        \end{itemize}
+
+    \item Software
+        \begin{itemize}
+         \item Limits -  Designed to restrict the upper bounds of the provided commands and to make sure the acceleration and velocities don't exceed a maximum.
+        \end{itemize}
+
+    \item Mechanical
+        \begin{itemize}
+            \item Emergency Stop - When pressed ON all electronics will have receive NO electric flow
+            \item Protective Shield - Shield designed to protect operators from pinch points created by the movement of the carriage along the rods.
+            \item Buzzer - Designed to warn the operator when the system is in autonomous “swing up” mode using harmonic oscillations
+            \item Power light - The system will have an LED to indicate when it is receiving power
+            \item TFT Screen - The TFT screen will display what mode the system is currently running so the operator is aware.
+        \end{itemize}
+    \end{itemize}
 
     \note{
         Most important features are sheilding
@@ -507,80 +691,6 @@
         access to cleaning to remove dust and prevent overheating
     }
 \end{frame}
-
-\section{CDR Specifics}
-\begin{frame}
-    \frametitle{Verification Plan (Electrical/Software)}
-
-    \begin{columns}
-        \begin{column}{0.58\textwidth}
-            \includegraphics[width=8.5cm]{ElectricalPrototype}
-        \end{column}
-
-        \begin{column}{0.40\textwidth}
-            \begin{block}{Block Diagram}
-                \tiny{
-                    Mainboard requires several important features:
-                    \begin{enumerate}
-                        \item E-Stop
-                        \item Button Inputs
-                        \item Potentiometers
-                        \item Encoder
-                        \item Motor output
-                        \item Limit Switch
-                        \item TFT Screen
-                    \end{enumerate}
-
-                    The prototype board implements all these features as well as...
-                    \begin{enumerate}
-                        \item USB Programming/debugging
-                        \item Status lights
-                        \item Mode and start select buttons
-                        \item Onboard VRM
-                    \end{enumerate}
-                }
-            \end{block}
-        \end{column}
-    \end{columns}
-
-    \note{
-        The electrical components must adheere to the standards we set
-        and must pass our tests
-
-        The most important tests are that the board \textbf{Generally Functions}
-        and that we can \textbf{Program and Debug} it without an external
-        programmer.
-    }
-\end{frame}
-
-\begin{frame}
-    \frametitle{Verification Plan (Mechanical)}
-
-    \begin{columns}
-        \begin{column}{0.40\textwidth}
-            \begin{block}{Block Diagram}
-                \tiny{
-                    Each bearing is tested and evaluated with the above chart, with specific attention to:
-                    \begin{enumerate}
-                        \item Cost of bearing (4 needed for every pendulum)
-                        \item Noise (Minimize sliding grinding noises)
-                        \item Performance (How well does it slide and protect the carriage shafts)
-                        \item Longevity (How long does it last without service or lube?)
-                    \end{enumerate}
-                }
-            \end{block}
-        \end{column}
-
-        \begin{column}{0.58\textwidth}
-            \includegraphics[width=8.5cm]{MechanicalPrototype}
-        \end{column}
-    \end{columns}
-
-    \note{
-        Might need matt input
-    }
-\end{frame}
-
 
 \begin{frame}
     \frametitle{Phase D}
@@ -598,91 +708,6 @@
     }
 \end{frame}
 
-
-\section{Diagrams}
-\subsection{Block Diagrams}
-\begin{frame}
-    \frametitle{Block Diagram}
-
-    \begin{columns}
-        \begin{column}{0.70\textwidth}
-            \includegraphics[height=7cm]{BlockDiagram}
-        \end{column}
-
-        \begin{column}{0.30\textwidth}
-            \begin{block}{Block Diagram}
-                The block diagram details the electrical, mechanical and software components and their relationship to each other.
-            \end{block}
-        \end{column}
-    \end{columns}
-
-\note{
-\huge Matt \normalsize
-
-\begin{itemize}
- \item Our block diagram shows how our software, hardware and electronics may interact in a final system
-\end{itemize}
-}
-
-\end{frame}
-
-\subsection{Operations}
-\begin{frame}
-    \frametitle{Operations}
-
-    \begin{columns}
-        \begin{column}{0.30\textwidth}
-            \begin{block}{Operations}
-                The Operations diagram details the physical and general controls.
-            \end{block}
-        \end{column}
-
-        \begin{column}{0.70\textwidth}
-            \includegraphics[height=7cm]{Operations}
-        \end{column}
-    \end{columns}
-
-\note{
-\huge Joe \normalsize
-
-\begin{itemize}
- \item The operations chart details our physical and general controls like the tft screen
- \item the buttons
- \item the motor controller and encoders
-\end{itemize}
-}
-
-\end{frame}
-
-\subsection{Software}
-\begin{frame}
-    \frametitle{Software Flowchart}
-
-    \begin{columns}
-        \begin{column}{0.72\textwidth}
-            \includegraphics[width=11cm]{Operation}
-        \end{column}
-
-        \begin{column}{0.28\textwidth}
-            \begin{block}{Software Flowchart}
-                The software flowchart is an overview of all the software functions of our
-                proposed product.
-            \end{block}
-        \end{column}
-    \end{columns}
-
-\note{
-\huge Austin \normalsize
-
-\begin{itemize}
- \item Our software flowchart details how the PID control scheme will be interactable by the users
-\end{itemize}
-}
-
-\end{frame}
-
-
-% \section{End}
 \begin{frame}
     \frametitle{End}
 
