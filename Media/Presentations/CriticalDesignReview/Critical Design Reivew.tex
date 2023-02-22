@@ -49,8 +49,6 @@
 }
 \end{frame}
 
-\section{Introduction}
-
 \begin{frame}
     \frametitle{What is PID}
 
@@ -434,7 +432,12 @@
     \end{columns}
 
     \note{
-        Notes here
+        To meet the minimum Requirements we've outlined our bearings must be
+        \begin{itemize}
+         \item Inexpensive
+         \item Quiet
+         \item and must support the weight of the carriage
+        \end{itemize}
     }
 \end{frame}
 
@@ -444,7 +447,7 @@
     \begin{columns}
         \begin{column}{0.28\textwidth}
             \begin{block}{Material Choice}
-                Different Materials lol
+                Each material has pros and cons.
             \end{block}
         \end{column}
 
@@ -454,7 +457,7 @@
     \end{columns}
 
     \note{
-        Notes here
+        The material choice affects cost as well as weight, noise and performance.
     }
 \end{frame}
 
@@ -564,7 +567,9 @@
 
         \begin{column}{0.28\textwidth}
             \begin{block}{Functional Requirements}
-                MISSING\_TEXT
+                Many of our functional requirements include features such as
+                a different modes and mode slections. As well as limits on
+                weight, power draw and assembly time.
             \end{block}
         \end{column}
     \end{columns}
@@ -584,13 +589,23 @@
     \frametitle{Performance Requirements}
 
     \includegraphics[height=7cm]{Performance}
+
+    \note{
+        We'll need to meed specific functional requirements like displaying
+        the mode and keeping the power supply cool.
+    }
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Other Requirements}
+    \frametitle{Interface and Design Requirements}
 
     \includegraphics[height=7cm]{OtherReqs}
+
+    \note{
+        We'll need to inteface to existing infrastructure such as
+        120v AC and have standardized e-stop technology
+    }
 \end{frame}
 
 
