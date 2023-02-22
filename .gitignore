@@ -12,9 +12,11 @@ _build
 # CAD Artifacts
 *.stl
 *.blend1
+OldVersions
 
 # Doc artifacts
 _*/
+~$*
 
 # Temporary files
 *.000
