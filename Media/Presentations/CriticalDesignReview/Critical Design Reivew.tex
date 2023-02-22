@@ -625,11 +625,11 @@
     \frametitle{Ordering Status}
 
     \begin{block}{Bearings}
-        Both dry and ball bearings have been ordered.
+        Dry bearings have arrived, ball bearings still in mail.
     \end{block}
 
     \begin{block}{PCB}
-        We've submitted our PCB but have not yet confirmed order.
+        PCB Confirmed Ordered.
     \end{block}
 
     \begin{block}{Steel}
@@ -660,15 +660,20 @@
 \begin{frame}
     \frametitle{Calibration and Maintenance}
 
-    \begin{enumerate}
+        \begin{itemize}
+            \item Self test and Auto Calibration
+            \item Use of hardware limits
+            \item Torque specs for all fasteners
+            \item Published maintenance schedule in docs.
+        \end{itemize}
+
+    \note{
+        \begin{enumerate}
         \item The system shall perform a self-test on start-up. Due to the pendulum hanging towards the center of the earth due to gravity, the encoder on the pendulum will be zeroed using the position.
         \item The motor shall move towards a limit switch at a set slow speed until it triggers one of the two limit switches on either side of the linear rails, upon triggering one, the carriage will then move a set amount of motor steps to the middle of the span of the linear rails.
         \item All fasteners shall have their tightness ensured before operation, and any renewal of lubrical for the pendulum shall be performed.
         \item A maintenance and component replacement manual shall be created in order to easily explain how to replace the COTS (common of the shelf) parts such as the precision belt or the motor internals.
     \end{enumerate}
-
-    \note{
-        Notes here
     }
 \end{frame}
 
