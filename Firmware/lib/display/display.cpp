@@ -111,3 +111,35 @@ void Display::plot(int v, byte scale)
     //     tft.drawLine(plotWriteHeadPos, 15, plotWriteHeadPos, maxValue + (scrHeight / 2), ST7735_YELLOW);
     // }
 };
+
+void Display::displayIssues()
+{
+    tft.setCursor(4, 4);
+    tft.setTextColor(ST77XX_WHITE);
+    tft.print("Please Report Issues!");
+
+    byte cursorx = 40;
+    byte cursory = 40;
+
+    // Memory for our bit
+    unsigned long long bit;
+    int16_t row;
+
+    for (uint8_t h = 0; h < test_code_height; h++)
+    {
+        for (uint8_t i = 0; i < test_code_width; i++)
+        {
+            row = test_code[h][2 - i];
+
+            for (uint8_t rowi = 0; rowi < 15; rowi++)
+            {
+                tft.drawPixel(cursorx, cursory, row & 1 ? ST77XX_WHITE : ST77XX_BLACK);
+
+                row >>= 1; // Shift
+                cursorx++;
+            }
+        }
+        cursorx = 40;
+        cursory++;
+    }
+}

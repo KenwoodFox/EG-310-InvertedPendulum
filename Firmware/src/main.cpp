@@ -12,7 +12,7 @@
 // Our libs
 #include "display.h"
 
-// Pindefs
+// Pindefs and misc
 #include <boardPins.h>
 
 // Instantiate Objects
@@ -38,7 +38,11 @@ void setup(void)
 
 void loop()
 {
-    // Plot table
-    tft.plot(encoder.read() / 100);
-    delay(20);
+    // // Plot table
+    // tft.plot(encoder.read() / 100);
+    // delay(20);
+
+    tft.displayIssues();
+
+    delay(500);
 }

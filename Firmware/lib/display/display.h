@@ -11,6 +11,9 @@
 // Adafruit
 #include <Adafruit_ST7735.h> // Hardware-specific library for ST7735
 
+// Our own
+#include <QuickResponse/qrCodes.h>
+
 /**
  * @brief Display object used to manipulate the display.
  *
@@ -70,4 +73,10 @@ public:
      * @param scale The scale its plotted on
      */
     void plot(int v, byte scale = 100);
+
+    /**
+     * @brief Displays the issues QR code on the screen.
+     *
+     */
+    void displayIssues();
 };
