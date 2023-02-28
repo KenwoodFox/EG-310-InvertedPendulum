@@ -7,6 +7,7 @@
 
 // AVR/System
 #include <Arduino.h>
+#include <Encoder.h>
 
 // Our libs
 #include "display.h"
@@ -16,6 +17,7 @@
 
 // Instantiate Objects
 Display tft = Display(TFT_CS, TFT_DC, TFT_RST);
+Encoder encoder(ENC_A, ENC_B);
 
 void setup(void)
 {
@@ -37,6 +39,6 @@ void setup(void)
 void loop()
 {
     // Plot table
-    tft.plot(sin(millis() / 100) * 40);
+    tft.plot(encoder.read() / 100);
     delay(20);
 }
