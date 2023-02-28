@@ -33,7 +33,9 @@ void setup(void)
     // Done loading
     tft.loading(100);
 
-    tft.beginPlot();
+    // tft.beginPlot();
+
+    tft.displayIssues();
 }
 
 void loop()
@@ -41,8 +43,6 @@ void loop()
     // // Plot table
     // tft.plot(encoder.read() / 100);
     // delay(20);
-
-    tft.displayIssues();
 
     delay(500);
 }

@@ -114,32 +114,49 @@ void Display::plot(int v, byte scale)
 
 void Display::displayIssues()
 {
-    tft.setCursor(4, 4);
-    tft.setTextColor(ST77XX_WHITE);
+    // Fill the screen
+    tft.fillScreen(ST77XX_WHITE);
+
+    // Banner
+    tft.setCursor(25, 4);
+    tft.setTextColor(ST77XX_BLACK);
     tft.print("Please Report Issues!");
 
-    byte cursorx = 40;
-    byte cursory = 40;
+    // Cursor memory
+    const uint8_t strechFactor = 3;
+    const uint8_t cursorx_ret = (scrWidth - (34 * strechFactor)) / 4; // 34 is width of image
+    uint8_t cursorx = cursorx_ret;
+    uint8_t cursory = 15;
 
     // Memory for our bit
     unsigned long long bit;
     int16_t row;
 
-    for (uint8_t h = 0; h < test_code_height; h++)
+    for (uint8_t h = 0; h < issues_code_height; h++)
     {
-        for (uint8_t i = 0; i < test_code_width; i++)
+        for (uint8_t _j = 0; _j < strechFactor; _j++) // Vertical stretch by 3
         {
-            row = test_code[h][2 - i];
-
-            for (uint8_t rowi = 0; rowi < 15; rowi++)
+            for (uint8_t i = 0; i < issues_code_width; i++)
             {
-                tft.drawPixel(cursorx, cursory, row & 1 ? ST77XX_WHITE : ST77XX_BLACK);
+                row = issues_code[h][2 - i];
 
-                row >>= 1; // Shift
-                cursorx++;
+                for (uint8_t rowi = 0; rowi < 15; rowi++)
+                {
+                    for (uint8_t _i = 0; _i < strechFactor; _i++) // Stretch by 3
+                    {
+                        tft.drawPixel(cursorx, cursory, row & 1 ? ST77XX_WHITE : ST77XX_BLACK);
+                        cursorx++;
+                    }
+
+                    row >>= 1; // Shift
+                }
             }
+            cursorx = cursorx_ret;
+            cursory++;
         }
-        cursorx = 40;
-        cursory++;
     }
+
+    // Footer
+    tft.setCursor(4, scrHeight - 11);
+    tft.print(REV);
 }
