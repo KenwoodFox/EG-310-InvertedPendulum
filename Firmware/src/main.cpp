@@ -28,7 +28,8 @@ void setup(void)
     tft.begin();
     tft.loading(0); // Update the loading bar
 
-    // Do stuff in here
+    // Inputs and Outputs
+    pinMode(STAT_LED, OUTPUT);
 
     // Done loading
     tft.loading(100);
@@ -44,5 +45,9 @@ void loop()
     // tft.plot(encoder.read() / 100);
     // delay(20);
 
+    digitalWrite(STAT_LED, HIGH);
     delay(500);
+    digitalWrite(STAT_LED, LOW);
+    delay(500);
+    tft.displayIssues();
 }
