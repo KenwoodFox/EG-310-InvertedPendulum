@@ -24,6 +24,10 @@ void setup(void)
     // Configure serial
     Serial.begin(115200);
 
+    pinMode(TFT_RST, OUTPUT);
+    digitalWrite(TFT_RST, LOW);
+    delay(100);
+
     // Begin our display
     tft.begin();
     tft.loading(0); // Update the loading bar
@@ -36,18 +40,18 @@ void setup(void)
 
     // tft.beginPlot();
 
-    tft.displayIssues();
+    // tft.displayIssues();
 }
 
 void loop()
 {
-    // // Plot table
+    // Plot table
     // tft.plot(encoder.read() / 100);
-    // delay(20);
+    delay(20);
 
     digitalWrite(STAT_LED, HIGH);
-    delay(500);
+    delay(100);
     digitalWrite(STAT_LED, LOW);
-    delay(500);
+    delay(100);
     tft.displayIssues();
 }
