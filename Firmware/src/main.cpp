@@ -47,7 +47,7 @@ void loop()
 {
     // Plot table
     // tft.plot(encoder.read() / 100);
-    delay(20);
+    // delay(20);
 
     digitalWrite(STAT_LED, HIGH);
     delay(100);
