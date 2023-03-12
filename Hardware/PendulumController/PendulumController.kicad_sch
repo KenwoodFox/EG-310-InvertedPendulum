@@ -8663,6 +8663,12 @@
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/10c4f79a-188e-4b54-92ee-dced0559c4b2"
       (reference "#PWR0146") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/887926d4-7f99-4357-9d0c-d8066753631d"
+      (reference "#PWR0147") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/4393655e-ba40-4aca-9cb6-c4a7ca4cfa52"
+      (reference "#PWR0148") (unit 1) (value "VBUS") (footprint "")
+    )
     (path "/4c5d1f0c-71b8-4a0e-888c-794bf6e4c7a4/cbe3a40e-05d6-4b4c-bc71-d9a218a4165e"
       (reference "#PWR0201") (unit 1) (value "GND") (footprint "")
     )
@@ -8764,6 +8770,9 @@
     )
     (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/db612ce0-c876-4472-8ff7-57c111720d10"
       (reference "D402") (unit 1) (value "TX") (footprint "LED_SMD:LED_0805_2012Metric")
+    )
+    (path "/da9ffcdc-1748-4bc3-b7bf-d8b9a01b43c6/2a48a945-491c-4503-a4a8-b0379e59c2c4"
+      (reference "D403") (unit 1) (value "MBR0520") (footprint "Diode_SMD:D_SOD-123")
     )
     (path "/a897efc7-7043-4a2e-8052-fee384b0a5bd"
       (reference "H101") (unit 1) (value "PiMountingHole") (footprint "MountingHole:MountingHole_2.7mm")
