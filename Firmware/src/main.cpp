@@ -23,6 +23,7 @@ void setup(void)
 {
     // Configure serial
     Serial.begin(115200);
+    Serial.println(REV);
 
     pinMode(TFT_RST, OUTPUT);
     digitalWrite(TFT_RST, LOW);
@@ -49,9 +50,13 @@ void loop()
     // tft.plot(encoder.read() / 100);
     // delay(20);
 
+    // Draw screen
+    Serial.println("Drawing New Issues");
+    tft.displayIssues();
+
+    // Blink
     digitalWrite(STAT_LED, HIGH);
     delay(100);
     digitalWrite(STAT_LED, LOW);
     delay(100);
-    tft.displayIssues();
 }
