@@ -64,13 +64,13 @@ void loop()
     // delay(100);
 
     // Test motor
-    digitalWrite(ENABLE, LOW); // Enable Motor
-    digitalWrite(DIR, LOW);
+    // digitalWrite(ENABLE, LOW); // Enable Motor
+    // digitalWrite(DIR, LOW);
 
-    digitalWrite(STEP, LOW);
-    digitalWrite(STAT_LED, LOW);
-    delayMicroseconds(1000);
-    digitalWrite(STEP, HIGH);
-    digitalWrite(STAT_LED, HIGH);
-    delayMicroseconds(1200);
+    // digitalWrite(STEP, LOW);
+    // digitalWrite(STAT_LED, LOW);
+    // delayMicroseconds(1000);
+    // digitalWrite(STEP, HIGH);
+    // digitalWrite(STAT_LED, HIGH);
+    // delayMicroseconds(1200);
 }
