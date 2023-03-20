@@ -25,16 +25,17 @@ void setup(void)
     Serial.begin(115200);
     Serial.println(REV);
 
-    pinMode(TFT_RST, OUTPUT);
-    digitalWrite(TFT_RST, LOW);
-    delay(100);
-
     // Begin our display
     tft.begin();
     tft.loading(0); // Update the loading bar
 
     // Inputs and Outputs
     pinMode(STAT_LED, OUTPUT);
+    pinMode(ENABLE, OUTPUT);
+    pinMode(DIR, OUTPUT);
+    pinMode(STEP, OUTPUT);
+
+    digitalWrite(ENABLE, HIGH);
 
     // Done loading
     tft.loading(100);
@@ -42,6 +43,8 @@ void setup(void)
     // tft.beginPlot();
 
     // tft.displayIssues();
+
+    delay(2000);
 }
 
 void loop()
@@ -51,12 +54,23 @@ void loop()
     // delay(20);
 
     // Draw screen
-    Serial.println("Drawing New Issues");
-    tft.displayIssues();
+    // Serial.println("Drawing New Issues");
+    // tft.displayIssues();
 
     // Blink
-    digitalWrite(STAT_LED, HIGH);
-    delay(100);
+    // digitalWrite(STAT_LED, HIGH);
+    // delay(100);
+    // digitalWrite(STAT_LED, LOW);
+    // delay(100);
+
+    // Test motor
+    digitalWrite(ENABLE, LOW); // Enable Motor
+    digitalWrite(DIR, LOW);
+
+    digitalWrite(STEP, LOW);
     digitalWrite(STAT_LED, LOW);
-    delay(100);
+    delayMicroseconds(1000);
+    digitalWrite(STEP, HIGH);
+    digitalWrite(STAT_LED, HIGH);
+    delayMicroseconds(1200);
 }
