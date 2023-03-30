@@ -34,6 +34,9 @@ void setup(void)
     pinMode(ENABLE, OUTPUT);
     pinMode(DIR, OUTPUT);
     pinMode(STEP, OUTPUT);
+    pinMode(PPIN, INPUT);
+    pinMode(IPIN, INPUT);
+    pinMode(DPIN, INPUT);
 
     digitalWrite(ENABLE, HIGH);
 
@@ -49,6 +52,7 @@ void setup(void)
 
 void loop()
 {
+
     // Plot table
     // tft.plot(encoder.read() / 100);
     // delay(20);
@@ -64,13 +68,15 @@ void loop()
     // delay(100);
 
     // Test motor
-    // digitalWrite(ENABLE, LOW); // Enable Motor
-    // digitalWrite(DIR, LOW);
+    digitalWrite(ENABLE, LOW); // Enable Motor
+    digitalWrite(DIR, LOW);
 
-    // digitalWrite(STEP, LOW);
-    // digitalWrite(STAT_LED, LOW);
-    // delayMicroseconds(1000);
-    // digitalWrite(STEP, HIGH);
-    // digitalWrite(STAT_LED, HIGH);
-    // delayMicroseconds(1200);
+    digitalWrite(STEP, LOW);
+    digitalWrite(STAT_LED, LOW);
+    delayMicroseconds(1000);
+    digitalWrite(STEP, HIGH);
+    digitalWrite(STAT_LED, HIGH);
+    delayMicroseconds(1200);
+
+    Serial.println(analogRead(PPIN));
 }
