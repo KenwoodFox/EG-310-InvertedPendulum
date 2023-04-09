@@ -11,6 +11,7 @@
 
 // Our libs
 #include "display.h"
+#include "calibrate.h"
 
 // Pindefs and misc
 #include <boardPins.h>
@@ -43,19 +44,15 @@ void setup(void)
     // Done loading
     tft.loading(100);
 
-    // tft.beginPlot();
-
-    // tft.displayIssues();
-
-    delay(2000);
+    calibrate(encoder);
+    Serial.println("Done. Encoder is now at ");
+    Serial.println(encoder.read());
 }
 
 void loop()
 {
-
     // Plot table
     // tft.plot(encoder.read() / 100);
-    // delay(20);
 
     // Draw screen
     // Serial.println("Drawing New Issues");
@@ -67,16 +64,18 @@ void loop()
     // digitalWrite(STAT_LED, LOW);
     // delay(100);
 
-    // Test motor
-    digitalWrite(ENABLE, LOW); // Enable Motor
-    digitalWrite(DIR, LOW);
+    // // Test motor
+    // digitalWrite(ENABLE, LOW); // Enable Motor
+    // digitalWrite(DIR, LOW);
 
-    digitalWrite(STEP, LOW);
-    digitalWrite(STAT_LED, LOW);
-    delayMicroseconds(1000);
-    digitalWrite(STEP, HIGH);
-    digitalWrite(STAT_LED, HIGH);
-    delayMicroseconds(1200);
+    // digitalWrite(STEP, LOW);
+    // digitalWrite(STAT_LED, LOW);
+    // delayMicroseconds(1000);
+    // digitalWrite(STEP, HIGH);
+    // digitalWrite(STAT_LED, HIGH);
+    // delayMicroseconds(1200);
 
-    Serial.println(analogRead(PPIN));
+    // Serial.println(analogRead(PPIN));
+
+    delay(20);
 }
