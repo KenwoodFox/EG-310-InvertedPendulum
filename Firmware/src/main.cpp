@@ -40,6 +40,7 @@ void setup(void)
     pinMode(DPIN, INPUT);
 
     digitalWrite(ENABLE, HIGH);
+    digitalWrite(STAT_LED, HIGH);
     digitalWrite(DIR, HIGH);
 
     // Done loading
