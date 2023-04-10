@@ -99,6 +99,12 @@ void loop()
     // -  (pos * 0.01)
     err = encoder.read() - (COUNTS_PER_ROTATION / 2);
 
+    // Primitive I
+    if (abs(err) < 20)
+    {
+        err = err * 1.2;
+    }
+
     setpoint = constrain((err * 0.3) * 10, -101, 101);
     setpoint = -setpoint;
 
