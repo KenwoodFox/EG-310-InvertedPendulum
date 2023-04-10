@@ -10,8 +10,10 @@
 #define ENABLE A2 // PC2
 
 // Motor
-#define STEP A0 // PC0
-#define DIR A1  // PC1
+// #define STEP A0 // PC0
+// #define DIR A1  // PC1
+#define STEP 7  // PC0
+#define DIR 8   // PC1
 #define ENC_A 2 // PD2
 #define ENC_B 3 // PD3
 
