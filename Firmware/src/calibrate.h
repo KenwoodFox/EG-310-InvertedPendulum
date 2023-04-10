@@ -9,12 +9,12 @@
  * @brief Auto calibration routine.
  *
  * @param enc An encoder to calibrate (sinusoid alpha decay).
- * @return true if uccessfully calibrated,
- * @return false on alibration error.
+ * @return true if successfully calibrated,
+ * @return false on calibration error.
  */
 bool calibrate(Encoder &enc)
 {
-    Serial.println("Begining Calibration.");
+    Serial.println(F("Begining Calibration."));
     for (int i = 0; i < 500; i++)
     {
         Serial.println(enc.read());

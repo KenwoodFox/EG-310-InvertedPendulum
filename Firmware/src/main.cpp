@@ -40,14 +40,46 @@ void setup(void)
     pinMode(DPIN, INPUT);
 
     digitalWrite(ENABLE, HIGH);
+    digitalWrite(DIR, HIGH);
 
     // Done loading
     tft.loading(100);
 
-    calibrate(encoder);
-    Serial.println("Done. Encoder is now at ");
+    // calibrate(encoder);
+    Serial.println(F("Done. Encoder is now at "));
     Serial.println(encoder.read());
 }
+
+const int MAX_SPEED = 900;
+int setpoint = -100;
+int pos = 0;
+int err = 0;
+int divisor = 0;
+
+void updateMotor()
+{
+    if (abs(err) < 800)
+    {
+        int delay = map(abs(setpoint), 0, 100, 20000, MAX_SPEED);
+        if (setpoint > 0)
+        {
+            digitalWrite(DIR, HIGH);
+            pos++;
+        }
+        else
+        {
+            digitalWrite(DIR, LOW);
+            pos--;
+        }
+
+        digitalWrite(STEP, HIGH);
+        delayMicroseconds(350);
+        digitalWrite(STEP, LOW);
+        delayMicroseconds(delay);
+    }
+}
+
+bool myDir = true;
 
 void loop()
 {
@@ -64,18 +96,13 @@ void loop()
     // digitalWrite(STAT_LED, LOW);
     // delay(100);
 
-    // // Test motor
-    // digitalWrite(ENABLE, LOW); // Enable Motor
-    // digitalWrite(DIR, LOW);
+    // -  (pos * 0.01)
+    err = encoder.read() - (COUNTS_PER_ROTATION / 2);
 
-    // digitalWrite(STEP, LOW);
-    // digitalWrite(STAT_LED, LOW);
-    // delayMicroseconds(1000);
-    // digitalWrite(STEP, HIGH);
-    // digitalWrite(STAT_LED, HIGH);
-    // delayMicroseconds(1200);
+    setpoint = constrain((err * 0.3) * 10, -101, 101);
+    setpoint = -setpoint;
 
-    // Serial.println(analogRead(PPIN));
+    Serial.println(err);
 
-    delay(20);
+    updateMotor();
 }
