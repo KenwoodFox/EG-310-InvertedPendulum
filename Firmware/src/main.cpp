@@ -90,7 +90,6 @@ bool myDir = true;
 bool spinUpDone = false;
 void spinUp()
 {
-    Serial.println(encoder.read());
     if (abs(encoder.read()) < 30 && millis() - lastMax > 400)
     {
         freq = freq * -1;
@@ -103,6 +102,7 @@ void spinUp()
     if (abs(encoder.read()) > 2000)
     {
         spinUpDone = true;
+        Serial.println("Spinup done.");
     }
 }
 
@@ -124,7 +124,7 @@ void loop()
     // -  (pos * 0.01)
     if (spinUpDone)
     {
-        err = encoder.read() - (COUNTS_PER_ROTATION / 2);
+        err = encoder.read() - (COUNTS_PER_ROTATION / 2) + (-pos / 200);
 
         // Primitive I
         if (abs(err) < 20)
