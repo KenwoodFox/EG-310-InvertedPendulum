@@ -150,4 +150,5 @@ void loop()
     // }
 
     updateMotor();
+    tft.plot(err);
 }
