@@ -64,7 +64,7 @@ jobs:
           fetch-depth: 0
 
       # Do not cache
-      - run: sudo apt install texlive-latex-recommended pdftk texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
+      - run: sudo apt update && sudo apt install texlive-latex-recommended pdftk texlive-latex-extra texlive-pictures pandoc rename latexmk inkscape imagemagick
 
       - name: Install requirements
         run: pip install -r Docs/requirements.txt
