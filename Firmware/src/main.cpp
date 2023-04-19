@@ -57,6 +57,11 @@ int pos = 0;
 int err = 0;
 int divisor = 0;
 
+// For harmonic oscilation
+int freq = 1300; // 1/hz
+int encMax = 100;
+int lastMax = 0;
+
 void updateMotor()
 {
     if (abs(err) < 800)
@@ -82,6 +87,25 @@ void updateMotor()
 
 bool myDir = true;
 
+bool spinUpDone = false;
+void spinUp()
+{
+    if (abs(encoder.read()) < 30 && millis() - lastMax > 400)
+    {
+        freq = freq * -1;
+        Serial.println("Hit apex!");
+        lastMax = millis();
+        encMax = 0;
+    }
+    setpoint = freq;
+
+    if (abs(encoder.read()) > 2000)
+    {
+        spinUpDone = true;
+        Serial.println("Spinup done.");
+    }
+}
+
 void loop()
 {
     // Plot table
@@ -98,18 +122,32 @@ void loop()
     // delay(100);
 
     // -  (pos * 0.01)
-    err = encoder.read() - (COUNTS_PER_ROTATION / 2);
-
-    // Primitive I
-    if (abs(err) < 20)
+    if (spinUpDone)
     {
-        err = err * 1.2;
+        err = encoder.read() - (COUNTS_PER_ROTATION / 2) + (-pos / 350);
+
+        // Primitive I
+        if (abs(err) < 20)
+        {
+            err = err * 1.3;
+        }
+
+        setpoint = constrain((err * 0.3) * 10, -101, 101);
+        setpoint = -setpoint;
+
+        Serial.println(err);
+    }
+    else
+    {
+        spinUp();
     }
 
-    setpoint = constrain((err * 0.3) * 10, -101, 101);
-    setpoint = -setpoint;
-
-    Serial.println(err);
+    divisor++;
+    if (divisor >= 10)
+    {
+        divisor = 0;
+        tft.plot(err);
+    }
 
     updateMotor();
 }

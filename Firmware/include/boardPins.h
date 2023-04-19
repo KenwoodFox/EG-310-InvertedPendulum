@@ -28,6 +28,6 @@
 #define TFT_RST 4 // PD4
 #define TFT_CS 5  // PD5
 #define SD_CS 6   // PD6
-#define TFT_DC 7  // PD7
+#define TFT_DC 9  // PD7
 
 #endif
