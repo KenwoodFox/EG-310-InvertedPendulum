@@ -124,12 +124,12 @@ void loop()
     // -  (pos * 0.01)
     if (spinUpDone)
     {
-        err = encoder.read() - (COUNTS_PER_ROTATION / 2) + (-pos / 200);
+        err = encoder.read() - (COUNTS_PER_ROTATION / 2) + (-pos / 350);
 
         // Primitive I
         if (abs(err) < 20)
         {
-            err = err * 1.2;
+            err = err * 1.3;
         }
 
         setpoint = constrain((err * 0.3) * 10, -101, 101);
@@ -142,13 +142,12 @@ void loop()
         spinUp();
     }
 
-    // divisor++;
-    // if (divisor >= 4)
-    // {
-    //     divisor = 0;
-    //     freq++;
-    // }
+    divisor++;
+    if (divisor >= 10)
+    {
+        divisor = 0;
+        tft.plot(err);
+    }
 
     updateMotor();
-    tft.plot(err);
 }
